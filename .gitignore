@@ -1,0 +1,24 @@
+#Ignore all logfiles and tempfiles.log
+*.zip
+*.rar
+*.via
+*.tmp
+*.err
+*.dll
+*.php
+*.txt
+/a/
+/data/
+/dede/
+/images/
+/include/
+/install/
+/member/
+/plus/
+/special/
+/templets/
+/uploads/
+/mtk/do.c
+!/plutommi/mmi
+!*.c
+!/plutommi/mmi/mmi_features.h
