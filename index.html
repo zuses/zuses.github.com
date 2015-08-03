@@ -1,36 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 6]><html class="ielt7 ielt8 ielt9 ielt10"><![endif]-->
+<!--[if IE 7]><html class="ie7 ielt8 ielt9 ielt10"><![endif]-->
+<!--[if IE 8]><html class="ie8 ielt9 ielt10"><![endif]-->
+<!--[if IE 9]><html class="ie9 ielt10"><![endif]-->
+<!--[if (gt IE 9)|!IE]><!--><html lang="en" class="en"><![endif]-->
 <head>
     <meta charset="UTF-8">
     <title>Ryze的博客</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-    <center><h2>建设中，敬请期待......</h2></center>
-    <input id="txt" type="text">
-    <input id="btn" onclick="b();" type="button" value="输入">
-    <p id="mess"></p>
+	
 </body>
-	<script>
-	function a(){
-		try{
-			cons11ole.log('hello world!');
-		} catch(err){
-			var txt = "Error description is: " + err.message;
-			console.log(txt);
-		}
-	}
-	//a();
-	function b(){
-		try{
-			var x = document.getElementById('txt').value;
-			if (x == "") {throw "值为空!"};
-			if (isNaN(x)) {throw "not a number!"};
-			if (x > 10) {throw "too high!"};
-			if (x < 5) {throw "too low!"};
-		} catch(err){
-			var y = document.getElementById('mess');
-			y.innerHTML = "Error description: " + err + "."
-		}
-	}
-	</script>
+	
 </html>
