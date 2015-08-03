@@ -6,5 +6,31 @@
 </head>
 <body>
     <center><h2>建设中，敬请期待......</h2></center>
+    <input id="txt" type="text">
+    <input id="btn" onclick="b();" type="button" value="输入">
+    <p id="mess"></p>
 </body>
+	<script>
+	function a(){
+		try{
+			cons11ole.log('hello world!');
+		} catch(err){
+			var txt = "Error description is: " + err.message;
+			console.log(txt);
+		}
+	}
+	//a();
+	function b(){
+		try{
+			var x = document.getElementById('txt').value;
+			if (x == "") {throw "值为空!"};
+			if (isNaN(x)) {throw "not a number!"};
+			if (x > 10) {throw "too high!"};
+			if (x < 5) {throw "too low!"};
+		} catch(err){
+			var y = document.getElementById('mess');
+			y.innerHTML = "Error description: " + err + "."
+		}
+	}
+	</script>
 </html>
