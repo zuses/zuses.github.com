@@ -6,14 +6,15 @@
  * 最后编辑人：tony.li
  *
  */
-     
+ 
+body{-webkit-font-smoothing: antialiased;background-color: #fff;}
 html,body{padding:0; margin:0;}
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0;word-wrap: break-word;word-break:break-all;}
-body, button, input, select, textarea { font: 14px/1.5 "Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu; color:#666 }
-h1, h2, h3, h4, h5, h6 { font-size: 100%;font-weight: normal;}
-address, cite, dfn, em, var, i{ font-style: normal }
+body, button, input, select, textarea { font: 12px/1.5 "Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu; color:#666 }
+h1, h2, h3, h4, h5, h6 { font-size: 100%;font-weight: normal;word-wra}
+address, cite, dfn, em, var, i{ font-style: normal;}
 ul, ol, dl { list-style: none }
-a { text-decoration: none !important; outline: none ;font-family:"Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;cursor: pointer;}
+a { text-decoration: none !important; outline: none ;font-family:"Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;cursor: pointer;color: #666;}
 img { border: 0 }
 button, input, select, textarea { font-size: 100% ;font-family:"Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;}
 table { border-collapse: collapse; border-spacing: 0 }
@@ -24,3 +25,12 @@ table { border-collapse: collapse; border-spacing: 0 }
 .fl{float: left;}
 .fr{float: right;}
 .ect{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+
+/*全局类名*/
+.global_wrap{position: relative;width: 100%;min-height:100%; clear: both; content: " ";}
+.container,.mid{width: 980px;margin: 0 auto;}
+.global_nav{height: 80px;line-height: 80px;}
+.nav_logo{float: left;}
+.logo{width: 260px;height: 60px;display: block;margin-top: 10px;background-color: #999;}
+.nav_list{float: right;text-align: right;}
+.nav_list ul li{float: left;margin-left: 30px;font-size: 20px;}
