@@ -32,8 +32,42 @@
       </div>
     </div>
     <div class="container">
-      
+      <form action="" method="get">
+        <input type="text" id="code" onchange="callServer();">
+      </form>
     </div>
   </div>
 </body>
+<script>
+  var xmlHttp = globalMethod.getXmlhttp();
+  function callServer() {
+  // Get the city and state from the web form
+  var code = document.getElementById("code").value;
+  // Only go on if there are values for both fields
+  if ((code == null) || (code == "")) return;
+
+  // Build the URL to connect to
+  var url = 'ajaxfile/ajaxfile1.txt' + '?code=' + Math.round(Math.random()*5 + 1);
+  console.log(url)
+  // Open a connection to the server
+  xmlHttp.open("GET", url, true);
+
+  // Setup a function for the server to run when it's done
+  xmlHttp.onreadystatechange = updatePage;
+
+  // Send the request
+  xmlHttp.send(null);
+}
+  function updatePage(){
+    if (xmlHttp.readyState == 4) {
+      if (xmlHttp.status == 200) {
+        var response = xmlHttp.responseText;
+        document.getElementById('code').value = response;
+      }else if (xmlHttp.status == 404)
+         alert("Request URL does not exist");
+       else
+         alert("Error: status code is " + xmlHttp.status);
+    };
+  }
+</script>
 </html>

@@ -140,33 +140,24 @@ var globalMethod = {
   /*表单切换 -End*/
 
   /* ajax 方法 */
-  ajax : function (url, fnSucc, fnFaild){
-    //1.创建对象
-    var oAjax = null;
-    if(window.XMLHttpRequest){
-        oAjax = new XMLHttpRequest();
-    }else{
-        oAjax = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-      
-    //2.连接服务器  
-    oAjax.open('GET', url, true);   //open(方法, url, 是否异步)
-      
-    //3.发送请求  
-    oAjax.send();
-      
-    //4.接收返回
-    oAjax.onreadystatechange = function(){  //OnReadyStateChange事件
-        if(oAjax.readyState == 4){  //4为完成
-            if(oAjax.status == 200){    //200为成功
-                fnSucc(oAjax.responseText) 
-            }else{
-                if(fnFaild){
-                    fnFaild();
-                }
-            }
+  getXmlhttp : function (){
+    var xmlHttp = null;
+    try{
+      xmlHttp = new XMLHttpRequest();
+    }catch(e){
+      try{
+        xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
+      }
+      catch(e){
+        try{
+          xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
         }
+        catch(failed){
+          xmlHttp = false;
+        }
+      }
     }
+    return xmlHttp;
 }
 /* ajax 方法 -End */
 
@@ -174,10 +165,7 @@ var globalMethod = {
 /*公用方法 - End*/
 
 /*全站公用效果*/
+
 // 全站顶部导航--英文导航名称
-var navLi = $('.top_nav .nav_list li');
-var navArray = ['HOME','GAME DATA','HOT EVENT','BBS'];
-for(var i = 0;i < navLi.length;i++){
-  navLi.eq(i).find('span.nav_en').text(navArray[i])
-}
+/*write here*/
 /*全站公用效果 - End*/
