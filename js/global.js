@@ -9,9 +9,8 @@
 /*弹框结构*/
 var winBomb = {
 
-  bomb1 : "<div id='qrcode' class='pop'><div class='pop-ctn'><a href='javascript:;' title='关闭' class='pop-close'><span class='icons icons-popclose'></span></a><div class='media clear'><div class='f-left'><img src='/templets/xh3/img/gong111.png' width='130' height='130' class='media-object'></div><div class='media-body'><h4 class='pop-title'>如何关注 校花的贴身高手 公众帐号</h4><ol class='list'><li>A 微信扫描二维码</li><li>B 微信搜索公众号 <span class='highline'>xiaohuazuihaowan</span></li></ol></div></div></div></div>",
+  bomb1 : "<div class='window_box'><div class='window_title clear'><span>提示</span><em>X</em></div><div class='window_content clear'><div class='ctn_left'>弹框2</div><div class='ctn_right'>弹框2</div></div></div>"
 
-  bomb2 : "<div class='window_box'><div class='window_title clear'><span>提示</span><em>X</em></div><div class='window_content clear'><div class='ctn_left'>弹框2</div><div class='ctn_right'>弹框2</div></div></div>"
 };
 /*正则常用匹配对象*/
 var Regexs = {
@@ -159,7 +158,7 @@ var globalMethod = {
     }
     return xmlHttp;
 }
-/* ajax 方法 -End */
+/* ajax 方法 -End */  
 
 };
 /*公用方法 - End*/

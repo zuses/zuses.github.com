@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ielt7 ielt8 ielt9 ielt10"><![endif]-->
+<!--[if IE 7]><html class="ie7 ielt8 ielt9 ielt10"><![endif]-->
+<!--[if IE 8]><html class="ie8 ielt9 ielt10"><![endif]-->
+<!--[if IE 9]><html class="ie9 ielt10"><![endif]-->
+<!--[if (gt IE 9)|!IE]><!--><html lang="en" class="en"><![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <title>Ryze的博客</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet/less" type="text/css" href="css/index.less" />
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/global.js"></script>
+  <!--[if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+	<script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="global_wrap">
+    <div class="img_wrap">
+      <ul class="img_ul" style="margin: 10px;">
+        
+      </ul>
+    </div>
+  </div>
+</body>
+<script>
+  var index = null;
+  var li = "<li><img class='img' width='100%'></li>";
+  var arr = [1,2,3,1,2,3,1,2,3];
+  var margin = 10;
+  var winWidth = $(window).width();
+  for(var i = 0;i < arr.length;i++){
+    $('.img_ul').append(li);
+    var oLi = $('.img_ul li');
+    var oImg = $('.img_ul li img');
+    var liWidth = oLi.offsetWidth + margin;
+    oImg.eq(i).attr('src','img/' + arr[i] + '.jpg');
+    var liHeight = oLi[i].offsetHeight;
+    var n = Math.floor(winWidth/192);
+    var h = [];
+    console.log(oImg[i].offsetHeight)
+    
+    if (i < n) {
+      oLi.eq(i).css({
+        'left': i*192,
+        'top' : 0
+      });
+    } else{
+      oLi.eq(i).css({
+        'left': (i - n)*192,
+        'top' : 174
+      });
+    }
+    console.log(n)
+  }
+  
+  $('.img_ul li').css({
+    'position': 'absolute',
+    'width': 180,
+    'border' : '1px solid #ccc'
+  });
+function getarraykey(s, v) {for(k in s) {if(s[k] == v) {return k;}}}
+</script>
+</html>
