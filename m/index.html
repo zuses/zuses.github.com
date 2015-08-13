@@ -20,6 +20,9 @@
 			<p class="title_tips">发现一切美好的东西</p>
 			<div class="up_ico"></div>
 		</div>
+		<div class="main">
+			<p class="temp"></p>
+		</div>
 	</div>
 </body>
 <script>
@@ -29,7 +32,24 @@
 	$('.door').swipeUp(function(){
 		$('.door').animate({
 		  	translateY: '-100%'
-		}, 500, 'ease-out');
+		}, 500, 'ease-out',function(){
+			// 文字打印
+			var tempTxt = '正在努力建设中...';
+			var speed = 100;
+			var num = -1;
+			tempTxt = tempTxt.split('');
+			var timer = setInterval(function(){
+				num++;
+				if (num >= tempTxt.length) {
+					num = tempTxt.length;
+					clearInterval(timer);
+					$('.temp').addClass('on');
+				};
+				$('.temp').append(tempTxt[num]);
+			},speed);
+			//$('.temp').text(tempTxt);
+			//console.log(tempTxt)
+		});
 	})
 </script>
 <script>

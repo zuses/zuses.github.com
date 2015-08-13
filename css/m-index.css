@@ -1,4 +1,4 @@
-html,body,.door,.page{height: 100%;}
+html,body,.door,.page{height: 100%;overflow: hidden;}
 body{font-size: .35rem;}
 .door{width: 100%;background: url(../img/m_door_bg.png) center no-repeat;background-size: cover;position: absolute;left: 0;top: 0;}
 .title_name,.title_tips{color: #fff;font-size: 0.6rem;text-align: center;margin-top: 40%;}
@@ -10,4 +10,17 @@ body{font-size: .35rem;}
 	.title_name{margin-top: 25%;}
 }
 .up_ico{width: 110px;height: 50px;background: url(../img/info_dis_slideup.png) center no-repeat;position: absolute;left: 50%;margin-left: -55px;bottom: 15px;background-size: cover;}
+.main{height: 100%;background-color: #6e83b2;}
+.temp{font-size: 0.6rem;color: #fff;text-align: center;line-height: 100%;height: 100%;padding-top: 50%;}
+.main p.temp.on{-webkit-animation: fz 0.5s;}
+@-webkit-keyframes fz{
+	0%{transform: scale(1);}
+	50%{transform: scale(1.5);}
+	100%{transform: scale(1);}
+}
+@keyframes fz{
+	0%{transform: scale(1);}
+	50%{transform: scale(1.5);}
+	100%{transform: scale(1);}
+}
 
