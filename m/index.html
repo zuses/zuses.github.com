@@ -16,18 +16,20 @@
 <body>
 	<div class="page">
 		<div class="door">
-			<p class="title_name">Ryze的博客</p>
-			<p class="title_tips">发现一切有利的东西</p>
+			<p class="title_name">李少杰的博客</p>
+			<p class="title_tips">发现一切美好的东西</p>
 			<div class="up_ico"></div>
 		</div>
 	</div>
 </body>
 <script>
+	document.addEventListener('touchmove', function (event) {
+		event.preventDefault();
+	}, false);
 	$('.door').swipeUp(function(){
-		/*$('.door').animate({
+		$('.door').animate({
 		  	translateY: '-100%'
-		}, 500, 'ease-out')*/
-		alert('hello world!')
+		}, 500, 'ease-out');
 	})
 </script>
 <script>
