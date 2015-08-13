@@ -49,6 +49,9 @@
         'top' : 0
       });
     } else{
+      h[i] = liHeight;
+      var min_H = Math.min.apply(null,h);
+      console.log(liHeight)
       oLi.eq(i).css({
         'left': (i - n)*192,
         'top' : 174

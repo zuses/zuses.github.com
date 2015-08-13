@@ -202,6 +202,7 @@ function liuxiaofan(){//定义成函数便于调用
 			h[i]=li_H;//把每个li放到数组里面
 			li.eq(i).css("top",0);//第一行的Li的top值为0
 			li.eq(i).css("left",i * li_W);//第i个li的左坐标就是i*li的宽度
+      console.log()
 			}
 		else{
 			min_H =Math.min.apply(null,h) ;//取得数组中的最小值，区块中高度值最小的那个
@@ -209,6 +210,7 @@ function liuxiaofan(){//定义成函数便于调用
 			h[minKey] += li_H+margin ;//加上新高度后更新高度值
 			li.eq(i).css("top",min_H+margin);//先得到高度最小的Li，然后把接下来的li放到它的下面
 			li.eq(i).css("left",minKey * li_W);	//第i个li的左坐标就是i*li的宽度
+      console.log()
 		}
 		$("h3").eq(i).text("编号："+i+"，高度："+li_H);//把区块的序号和它的高度值写入对应的区块H3标题里面
 	}
