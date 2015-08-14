@@ -14,7 +14,9 @@
 	</div>
 	<link rel="stylesheet" href="../css/m-global.css">
 	<link rel="stylesheet" href="../css/m-index.css">
+	<link rel="stylesheet" href="../css/swiper.min.css">
 	<script src="../js/zepto.js"></script>
+	<script src="../js/swiper.jquery.min.js"></script>
 </head>
 <body>
 	<div class="loading" style="background: #000;display: block;position: absolute;z-index: 99999;width: 100%;height: 100%;position: relative;">
@@ -49,6 +51,18 @@
 			<div class="up_ico"></div>
 		</div>
 		<div class="main">
+	        <div class="swiper-container">
+	            <div class="swiper-wrapper" style="position: relative; overflow: hidden; -webkit-backface-visibility: hidden;">
+					<div class="swiper-slide"><a href="javascript:;"><img src="../img/a.jpg"></a></div>
+                    <div class="swiper-slide"><a href="javascript:;"><img src="../img/b.jpg"></a></div>
+                    <div class="swiper-slide"><a href="javascript:;"><img src="../img/c.jpg"></a></div>
+                    <div class="swiper-slide"><a href="javascript:;"><img src="../img/d.jpg"></a></div>
+                    <div class="swiper-slide"><a href="javascript:;"><img src="../img/e.jpg"></a></div>
+                    <div class="swiper-slide"><a href="javascript:;"><img src="../img/f.jpg"></a></div>
+                    <div class="swiper-slide"><a href="javascript:;"><img src="../img/g.jpg"></a></div>
+	            </div>
+	            <div class="swiper-pagination"></div>
+	        </div>
 			<p class="temp" txt="正在努力建设中..."></p>
 		</div>
 	</div>
@@ -78,7 +92,16 @@
 				};
 				$('.temp').append(tempTxt[num]);
 			},speed);
-
+			var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+		    loop: true,
+		    speed: 500,
+		    autoplay: 3000,
+		    autoplayDisableOnInteraction: false,
+		    preloadImages:false,
+		    // 如果需要分页器
+		    pagination: '.swiper-pagination'
+		  }) 
 		});
 	})
 	

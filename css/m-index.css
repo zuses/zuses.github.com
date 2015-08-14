@@ -1,6 +1,6 @@
 html,body,.door,.page{height: 100%;overflow: hidden;}
 body{font-size: .35rem;}
-.door{width: 100%;background: #fff url(../img/m_door_bg.png) center no-repeat;background-size: cover;position: absolute;left: 0;top: 0;}
+.door{width: 100%;background: #fff url(../img/m_door_bg.png) center no-repeat;background-size: cover;position: absolute;left: 0;top: 0;z-index: 999;}
 .title_name,.title_tips{color: #fff;font-size: 0.6rem;text-align: center;margin-top: 40%;}
 .title_tips{margin-top: 30px;font-size: 0.5rem}
 @media (min-width:480px) {
@@ -11,7 +11,7 @@ body{font-size: .35rem;}
 }
 .up_ico{width: 110px;height: 50px;background: url(../img/info_dis_slideup.png) center no-repeat;position: absolute;left: 50%;margin-left: -55px;bottom: 15px;background-size: cover;animation: fade 1500ms ease-in infinite;-webkit-animation: fade 1500ms ease-in infinite;}
 .main{height: 100%;background-color: #6e83b2;}
-.temp{font-size: 0.6rem;color: #fff;text-align: center;line-height: 100%;height: 100%;padding-top: 50%;}
+.temp{font-size: 0.6rem;color: #fff;text-align: center;line-height: 100%;height: 100%;padding-top: 30%;}
 .main p.temp.on{-webkit-animation: fz 0.5s;animation: fz 0.3s;}
 @-webkit-keyframes fz{
 	0%{-webkit-transform: scale(1);}
@@ -86,3 +86,6 @@ keyframes fade{
 	50%{opacity: .4}
 	100%{opacity: .8}
 }
+.swiper-slide a img{width: 100%;}
+.swiper-pagination{width: 100%;bottom: 0;}
+.swiper-pagination span{margin: 0 5px;}
