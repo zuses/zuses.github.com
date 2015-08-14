@@ -17,6 +17,7 @@
 	<script src="../js/zepto.js"></script>
 </head>
 <body>
+	<div class="loading" style="background: red;display: block;position: absolute;z-index: 99999;width: 100%;height: 100%;"></div>
 	<div class="page">
 		<div class="door">
 			<p class="title_name">李少杰的博客</p>
@@ -87,5 +88,15 @@
 		var scales = 40/320;
 		html.css('fontSize',scales*winWidth);
 	});
+	document.onreadystatechange = subSomething;//当页面加载状态改变的时候执行这个方法.
+	function subSomething()
+		{
+		if(document.readyState == "complete"){ 
+			$('.loading').hide();
+		} 
+		else if(document.readyState=="loading"){
+			$('.loading').show();
+		}
+	}
 </script>
 </html>
