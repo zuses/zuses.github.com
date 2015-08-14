@@ -18,7 +18,11 @@
 </head>
 <body>
 	<div class="loading" style="background: #000;display: block;position: absolute;z-index: 99999;width: 100%;height: 100%;position: relative;">
-		<img class="loadImg" style="width: 100%;height: 320px;position: absolute;left: 0;top: 50%;margin-top: -160px;display: block;" src="../img/loading1.gif" alt="">
+		<div class="spinner">
+		  <div class="dot1"></div>
+		  <div class="dot2"></div>
+		</div>
+		<!-- <img class="loadImg" style="width: 100%;height: 320px;position: absolute;left: 0;top: 50%;margin-top: -160px;display: block;" src="../img/loading1.gif" alt=""> -->
 	</div>
 	<script>
 		document.onreadystatechange = subSomething;//当页面加载状态改变的时候执行这个方法.
@@ -28,7 +32,7 @@
 				setTimeout(function(){
 					$('.loading').animate({
 						opacity: 0
-					},500,function(){
+					},800,function(){
 						$('.loading').remove();
 					});
 				}, 2000)
