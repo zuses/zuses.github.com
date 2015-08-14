@@ -17,7 +17,9 @@
 	<script src="../js/zepto.js"></script>
 </head>
 <body>
-	<div class="loading" style="background: red;display: block;position: absolute;z-index: 99999;width: 100%;height: 100%;"></div>
+	<div class="loading" style="background: #000;display: block;position: absolute;z-index: 99999;width: 100%;height: 100%;position: relative;">
+		<img class="loadImg" style="width: 100%;height: 320px;position: absolute;left: 0;top: 50%;margin-top: -160px;display: block;" src="../img/loading.gif" alt="">
+	</div>
 	<script>
 		document.onreadystatechange = subSomething;//当页面加载状态改变的时候执行这个方法.
 		function subSomething()
