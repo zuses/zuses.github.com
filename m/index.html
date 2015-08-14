@@ -25,11 +25,13 @@
 		function subSomething()
 			{
 			if(document.readyState == "complete"){ 
-				$('.loading').animate({
-					opacity: 0
-				},500,function(){
-					$('.loading').remove();
-				});
+				setTimeout(function(){
+					$('.loading').animate({
+						opacity: 0
+					},500,function(){
+						$('.loading').remove();
+					});
+				}, 2000)
 			} 
 			else if(document.readyState=="loading"){
 				$('.loading').show();
