@@ -38,7 +38,7 @@
 	$('.door').swipeUp(function(){
 		$('.door').animate({
 		  	translateY: '-100%'
-		}, 500, 'ease-out',function(){
+		}, 500, 'cubic-bezier(0.74, 0.08, 0.61, 0.21)',function(){
 			// 文字打印
 			var speed = 100;
 			var num = -1;
