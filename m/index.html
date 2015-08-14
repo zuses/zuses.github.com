@@ -61,7 +61,7 @@
 		if($('.temp').hasClass('on')){
 			$('.door').animate({
 				translateY: 0
-			},500,'ease-out',function(){
+			},500,'cubic-bezier(0.74, 0.08, 0.61, 0.21)',function(){
 				$('.temp').text('').removeClass('on');
 			})
 		}
