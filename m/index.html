@@ -25,7 +25,11 @@
 		function subSomething()
 			{
 			if(document.readyState == "complete"){ 
-				$('.loading').hide(500);
+				$('.loading').animate({
+					opacity: 0
+				},500,function(){
+					$('.loading').remove();
+				});
 			} 
 			else if(document.readyState=="loading"){
 				$('.loading').show();
