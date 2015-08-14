@@ -9,7 +9,7 @@ body{font-size: .35rem;}
 @media (min-width:830px) {
 	.title_name{margin-top: 25%;}
 }
-.up_ico{width: 110px;height: 50px;background: url(../img/info_dis_slideup.png) center no-repeat;position: absolute;left: 50%;margin-left: -55px;bottom: 15px;background-size: cover;}
+.up_ico{width: 110px;height: 50px;background: url(../img/info_dis_slideup.png) center no-repeat;position: absolute;left: 50%;margin-left: -55px;bottom: 15px;background-size: cover;animation: fade 1500ms ease-in infinite;-webkit-animation: fade 1500ms ease-in infinite;}
 .main{height: 100%;background-color: #6e83b2;}
 .temp{font-size: 0.6rem;color: #fff;text-align: center;line-height: 100%;height: 100%;padding-top: 50%;}
 .main p.temp.on{-webkit-animation: fz 0.5s;animation: fz 0.3s;}
@@ -24,7 +24,7 @@ body{font-size: .35rem;}
 	100%{transform: scale(1);}
 }
 
-
+/* 预加载动画样式 */
 .spinner {
   margin: 100px auto;
   width: 90px;
@@ -47,7 +47,6 @@ body{font-size: .35rem;}
   top: 0;
   background-color: #67CF22;
   border-radius: 100%;
-  
   -webkit-animation: bounce 2.0s infinite ease-in-out;
   animation: bounce 2.0s infinite ease-in-out;
 }
@@ -75,4 +74,15 @@ body{font-size: .35rem;}
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
+}
+
+@-webkit-keyframes fade{
+	0%{opacity: .8}
+	50%{opacity: .4}
+	100%{opacity: .8}
+}
+keyframes fade{
+	0%{opacity: .8}
+	50%{opacity: .4}
+	100%{opacity: .8}
 }
