@@ -23,7 +23,36 @@
 	<link rel="stylesheet" href="../css/m-global.css">
 </head>
 <body onload="forward();">
-	<a  href="http://localhost/m/index.html" name="f1" id="f1" />
-     <img src="../img/2.jpg" id="loadPic" hspace="10" vspace="50" width="140" border="0">
+	<style>.img{border:none;}.t_all{width:100%; height:50px; background:#fff;}.t_main{width:1000px; height:50px; margin:0 auto; position:relative;}.t_logo{width:170px; height:50px; display:inline-block; float:left; background:url(http://www.yrtsgame.com/a/img/logo_s.png) no-repeat; margin-right:20px;}.t_ads{width:420px;hegiht:50px;float:left;display:block;}.t_ycc{width:960px; height:240px; background:#FFF; display:none; z-index:100; position:absolute; left:0px; bottom:-240px;}.t_right{width:300px; float:right;font:normal 14px/50px "microsoft yahei";color:#dedede;}.t_right a{color:#262627; margin:0 10px; text-decoration:none;}.t_right a:hover{color:#ff4e00;}.t_xia{width:236px; height:270px; position:absolute; right:65px; bottom:-255px; display:none; z-index:999;}</style>
+<script type="text/javascript" src="http://www.yrtsgame.com/js/jquery-1.7.2.min.js"></script>
+<script>
+    $(function(){
+        $("#ads").mouseover(function(){
+            $(".adv").toggle();
+        });
+        
+        $("#adv").mouseout(function(){
+            $(".adv").toggle();
+        });
+    });
+function ddd(obj, sType) { 
+var oDiv = document.getElementById(obj); 
+if (sType == 'show') { oDiv.style.display = 'block';} 
+if (sType == 'hide') { oDiv.style.display = 'none';} 
+} 
+</script>
+<div class="t_all">
+<div class="t_main">
+<a class="t_logo" href="http://www.yrtsgame.com"></a>
+<div class="t_ads" ><a id="ads" class="adv"><img class="" src="http://www.yrtsgame.com/a/img/top_xiao.jpg"/></a>
+<a class="t_ycc adv" id="adv" href="http://xh3.yrtsgame.com" target="_blank"><img src="http://www.yrtsgame.com/a/img/top_ads.jpg"/></a>
+</div>
+<div class="t_right">
+<a target="_blank" href="http://bbs.yrtsgame.com/forum.php">官方论坛</a>|
+<a target="_blank" href="http://bbs.yrtsgame.com/plugin.php?id=cdk:index">官方礼包</a>
+<a href="javascript:;" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');">游戏中心</a>
+<div class="t_xia" id="aa" onmouseover="ddd('aa', 'show');" onmouseout="ddd('aa', 'hide');">
+<iframe id="gameRank" name="gameRank" allowtransparency="true" style="background:transparent;" src="http://www.yrtsgame.com/a/top-menu.html" width="232" height="270" frameborder="0" scrolling="no"></iframe>
+</div></div></div></div>
 </body>
 </html>

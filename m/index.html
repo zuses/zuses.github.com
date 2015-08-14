@@ -29,6 +29,7 @@
 	</div>
 </body>
 <script>
+	
 	document.addEventListener('touchmove', function (event) {
 		event.preventDefault();
 	}, false);
@@ -50,9 +51,14 @@
 				};
 				$('.temp').append(tempTxt[num]);
 			},speed);
-			//$('.temp').text(tempTxt);
-			//console.log(tempTxt)
 		});
+	})
+	$('.main').swipeDown(function(){
+		$('.door').animate({
+			translateY: 0
+		},500,'ease-out',function(){
+			$('.temp').text('').removeClass('on');
+		})
 	})
 </script>
 <script>
