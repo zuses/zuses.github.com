@@ -25,7 +25,7 @@
 		function subSomething()
 			{
 			if(document.readyState == "complete"){ 
-				$('.loading').hide();
+				$('.loading').hide(500);
 			} 
 			else if(document.readyState=="loading"){
 				$('.loading').show();
