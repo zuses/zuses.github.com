@@ -24,7 +24,7 @@
 			<div class="up_ico"></div>
 		</div>
 		<div class="main">
-			<p class="temp"></p>
+			<p class="temp" txt="正在努力建设中..."></p>
 		</div>
 	</div>
 </body>
@@ -33,14 +33,16 @@
 	document.addEventListener('touchmove', function (event) {
 		event.preventDefault();
 	}, false);
+	var txtLen = $('.temp').attr('txt').split('').length
+	console.log(txtLen)
 	$('.door').swipeUp(function(){
 		$('.door').animate({
 		  	translateY: '-100%'
 		}, 500, 'ease-out',function(){
 			// 文字打印
-			var tempTxt = '正在努力建设中...';
 			var speed = 100;
 			var num = -1;
+			var tempTxt = $('.temp').attr('txt');
 			tempTxt = tempTxt.split('');
 			var timer = setInterval(function(){
 				num++;
@@ -51,14 +53,18 @@
 				};
 				$('.temp').append(tempTxt[num]);
 			},speed);
+
 		});
 	})
+	
 	$('.main').swipeDown(function(){
-		$('.door').animate({
-			translateY: 0
-		},500,'ease-out',function(){
-			$('.temp').text('').removeClass('on');
-		})
+		if($('.temp').hasClass('on')){
+			$('.door').animate({
+				translateY: 0
+			},500,'ease-out',function(){
+				$('.temp').text('').removeClass('on');
+			})
+		}
 	})
 </script>
 <script>
