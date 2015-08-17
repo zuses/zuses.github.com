@@ -157,9 +157,26 @@ var globalMethod = {
       }
     }
     return xmlHttp;
-}
+},
 /* ajax 方法 -End */  
 
+  /* 打印文字 */
+  printWord : function(obj,txt,interval,callback){
+    txt = txt.split('');
+    var num = 0;
+    var timer = setInterval(function(){
+      num++;
+      if(num >= txt.length){
+        num = txt.length;
+        clearInterval(timer);
+        if(callback){
+          callback();
+        }
+      }
+      obj.append(txt[num]);
+    },interval)
+  }
+  /* 打印文字 -End */
 };
 /*公用方法 - End*/
 

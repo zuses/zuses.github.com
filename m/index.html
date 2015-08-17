@@ -62,35 +62,50 @@
 	            </div>
 	            <div class="swiper-pagination"></div>
 	        </div>
+	        <div class="my_info">
+	        	<ul>
+	        		<li>姓名：XXX</li>
+	        		<li>性别：你猜</li>
+	        		<li>职业：web前端开发工程师</li>
+	        		<li>籍贯：湖南常德</li>
+	        		<li>生日：07/07</li>
+	        		<li>爱好：篮球</li>
+	        	</ul>
+	        </div>
 			<p class="temp" txt="正在努力建设中..."></p>
 		</div>
 	</div>
 </body>
 <script>
-	
+	function printWord(obj,txt,interval,callback){
+	    txt = txt.split('');
+	    var num = -1;
+	    var timer = setInterval(function(){
+	      num++;
+	      if(num >= txt.length){
+	        num = txt.length;
+	        clearInterval(timer);
+	        if(callback){
+		    	callback();
+		    }
+	      }
+	      obj.append(txt[num]);
+	    },interval)
+	  }
 	document.addEventListener('touchmove', function (event) {
 		event.preventDefault();
 	}, false);
-	var txtLen = $('.temp').attr('txt').split('').length
-	console.log(txtLen)
+	var txtLen = $('.temp').attr('txt').split('').length;
 	$('.door').swipeUp(function(){
 		$('.door').animate({
 		  	translateY: '-100%'
 		}, 500, 'cubic-bezier(0.74, 0.08, 0.61, 0.21)',function(){
 			// 文字打印
-			var speed = 100;
-			var num = -1;
 			var tempTxt = $('.temp').attr('txt');
-			tempTxt = tempTxt.split('');
-			var timer = setInterval(function(){
-				num++;
-				if (num >= tempTxt.length) {
-					num = tempTxt.length;
-					clearInterval(timer);
-					$('.temp').addClass('on');
-				};
-				$('.temp').append(tempTxt[num]);
-			},speed);
+			printWord($('.temp'),tempTxt,100,function(){
+				$('.temp').addClass('on');
+			});
+			// 轮播图
 			var mySwiper = new Swiper ('.swiper-container', {
 		    direction: 'horizontal',
 		    loop: true,
