@@ -9,14 +9,14 @@
 	<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
 	<meta name="HandheldFriendly" content="true">
 	<title>Tony的博客-触屏版</title>
-	<div id='wx_pic' style='margin:0 auto;display:none;'>
-		<img src='../img/IMG_0216.JPG' />
-	</div>
 	<link rel="stylesheet" href="../css/m-global.css">
 	<link rel="stylesheet" href="../css/m-index.css">
 	<link rel="stylesheet" href="../css/swiper.min.css">
 	<script src="../js/zepto.js"></script>
 	<script src="../js/swiper.jquery.min.js"></script>
+	<div id='wx_pic' style='margin:0 auto;display:none;'>
+		<img src='../img/IMG_0216.JPG' />
+	</div>
 </head>
 <body>
 	<div class="loading" style="background: #000;display: block;position: absolute;z-index: 99999;width: 100%;height: 100%;position: relative;">
@@ -92,10 +92,26 @@
 	      obj.append(txt[num]);
 	    },interval)
 	  }
+
 	document.addEventListener('touchmove', function (event) {
 		event.preventDefault();
 	}, false);
 	var txtLen = $('.temp').attr('txt').split('').length;
+	var swipe = function (){
+		var mySwiper;
+			mySwiper = new Swiper ('.swiper-container', {
+			    direction: 'horizontal',
+			    loop: true,
+			    speed: 500,
+			    autoplay: 3000,
+			    autoplayDisableOnInteraction: false,
+			    preloadImages:false,
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination'
+			});
+			swipe = null;
+		 
+	}
 	$('.door').swipeUp(function(){
 		$('.door').animate({
 		  	translateY: '-100%'
@@ -105,17 +121,9 @@
 			printWord($('.temp'),tempTxt,100,function(){
 				$('.temp').addClass('on');
 			});
+
 			// 轮播图
-			var mySwiper = new Swiper ('.swiper-container', {
-		    direction: 'horizontal',
-		    loop: true,
-		    speed: 500,
-		    autoplay: 3000,
-		    autoplayDisableOnInteraction: false,
-		    preloadImages:false,
-		    // 如果需要分页器
-		    pagination: '.swiper-pagination'
-		  }) 
+			swipe();
 		});
 	})
 	
@@ -140,13 +148,14 @@
 	$(window).resize(function(event) {
 		var html = $('html');
 		var winWidth = $(window).width();
-		var scales = 40/320;
+		var scales = Math.floor(40/320);
 		html.css('fontSize',scales*winWidth);
 	});
 	$(function(){
 		var html = $('html');
 		var winWidth = $(window).width();
 		var scales = 40/320;
+		console.log(scales)
 		html.css('fontSize',scales*winWidth);
 	});
 </script>
