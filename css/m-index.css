@@ -1,6 +1,6 @@
 html,body,.door,.page{height: 100%;overflow: hidden;}
 body{font-size: .35rem;}
-.door{width: 100%;background: #fff url(../img/m_door_bg.png) center no-repeat;background-size: cover;position: absolute;left: 0;top: 0;z-index: 999;}
+.door{width: 100%;background: #fff url(../img/m_door_bg.jpg) center no-repeat;background-size: cover;position: absolute;left: 0;top: 0;z-index: 999;}
 .title_name,.title_tips{color: #fff;font-size: 0.6rem;text-align: center;margin-top: 40%;}
 .title_tips{margin-top: 30px;font-size: 0.5rem}
 @media (min-width:480px) {
