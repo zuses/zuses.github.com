@@ -1,0 +1,20 @@
+<!doctype html>
+<html>    
+<head>
+<title>angularjs 大小写过滤器</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">          
+</head>    
+<body>
+	<div ng-app="myApp" ng-controller="personCtrl">
+		<p>姓名为(大写)：{{lastName | uppercase}}</p>
+		<p>姓名为(小写)：{{lastName | lowercase}}</p>
+	</div>
+	<script src="../js/Angular.js"></script> 
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('personCtrl',function($scope){
+			$scope.lastName = 'Doe';
+		})
+	</script>
+</body>
+</html>

@@ -6,8 +6,8 @@
 </head>    
 <body>
 	<div ng-app>
-		<p>姓名：<input type="text" ng-model="name"></p>
-		<p ng-bind="name"></p>
+		<p>姓名：<span ng-init="firstName='John'"></span></p>
+		<p ng-bind="firstName"></p>
 	</div>
 	<script src="../js/Angular.js"></script> 
 </body>

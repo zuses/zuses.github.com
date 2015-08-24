@@ -1,0 +1,16 @@
+<!doctype html>
+<html>    
+<head>
+<title>angularjs 数据绑定</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">          
+</head>    
+<body>
+	<div ng-app ng-init="quantity=1;price=5">
+		<h2>价格计算器</h2>
+		<p>数量：<input ng-model="quantity" type="text"></p>
+		<p>数量：<input ng-model="price" type="text"></p>
+		<p><b>总价：</b>{{quantity*price}}</p>
+	</div>
+	<script src="../js/Angular.js"></script> 
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>    
+<head>
+<title>angularjs 格式化数字为货币格式</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">          
+</head>    
+<body>
+	<div ng-app="myApp" ng-controller="costCtrl">
+		<p><input type="number" ng-model="quantity"></p>
+		<p><input type="number" ng-model="price"></p>
+		<p>总价 = {{quantity*price | currency}}</p>
+	</div>
+	<script src="../js/Angular.js"></script> 
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('costCtrl',function($scope){
+			$scope.quantity = 1;
+			$scope.price = 9.99;
+		})
+	</script>
+</body>
+</html>

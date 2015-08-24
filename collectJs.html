@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/global.js"></script>
+	<script>
+	window.onload = function(){
+
+		var def = document.getElementById('def');
+		def.onkeydown = function(ev){
+			var e = ev || window.event;
+			if(def.value.length >= 10 && e.keyCode != 116 && e.keyCode != 8 && e.keyCode != 37 && e.keyCode != 39){
+				globalMethod.preDef(e);  // 阻止默认事件，控制文本框输入
+			}
+			console.log('你的按键为：' + e.keyCode + ',' + def.value.length);
+		}
+
+		var test = document.getElementById('test');
+		var cancel = document.getElementById('cancel');
+		function a(){
+			alert(1)
+		}
+		function b(){
+			alert(2)
+		}
+		globalMethod.addEvent(test,'click',a);
+		globalMethod.addEvent(test,'click',b);
+		globalMethod.addEvent(cancel,'click',function(){
+			globalMethod.removeEvent(test,'click',a);
+		});
+
+		var bub1 = document.getElementById('bub1');
+		var bub2 = document.getElementById('bub2');
+		globalMethod.addEvent(bub1,'click',function(ev){
+			var e = ev || window.event;
+			globalMethod.preBub(e);
+			alert('我是bub1');
+		});
+		globalMethod.addEvent(bub2,'click',function(ev){
+			var e = ev || window.event;
+			globalMethod.preBub(e);
+			alert('我是bub2');
+		});
+
+		window.onscroll = function(){
+			console.log(globalMethod.getSp().top)
+		}
+
+		console.log(globalMethod.getWindow().width + ',' + globalMethod.getWindow().height);
+	}
+	</script>
+</head>
+<body style="height: 2000px;">
+	<div class="test" id="test" style="width: 100px;height: 20px;background: #f90;margin: 10px;"></div>
+	<div class="cancel" id="cancel" style="width: 100px;height: 20px;background: #ccc;margin: 10px;"></div>
+	<input type="text" id="def">
+
+	<div id="bub1" style="width: 100px;height: 100px;background: #f90;overflow: hidden;font-size: 12px;position: relative;">
+		<span style="position: absolute;left: 0;top: 0;">父级</span>
+		<div id="bub2" style="width: 60px;height: 60px;margin: 20px;background: #ccc;position: relative;"><span id="zi" style="position: absolute;left: 0;top: 0;">子级</span></div>
+	</div>
+	<script>
+		var zi = document.getElementById('zi');
+		document.onkeydown = function(ev){
+			var e = ev || window.event;
+			if(e.keyCode == 39){
+				zi.style.left = zi.offsetLeft + 1 + 'px';
+			} else if(e.keyCode == 37){
+				zi.style.left = zi.offsetLeft - 1 + 'px';
+			} else if(e.keyCode == 38){
+				zi.style.top = zi.offsetTop - 1 + 'px';
+			} else if(e.keyCode == 40){
+				zi.style.top = zi.offsetTop + 1 + 'px';
+			}
+		}
+	</script>
+</body>
+</html>

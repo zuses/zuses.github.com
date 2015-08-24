@@ -1,0 +1,22 @@
+<!doctype html>
+<html>    
+<head>
+<title>angularjs 控制器</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">          
+</head>    
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		姓：<input ng-model="firstName" type="text">
+		名：<input ng-model="lastName" type="text">
+		<p>姓名：{{firstName + ' ' + lastName}}</p>
+	</div>
+	<script src="../js/Angular.js"></script> 
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope){
+			$scope.firstName = 'John';
+			$scope.lastName = 'Doe';
+		})
+	</script>
+</body>
+</html>

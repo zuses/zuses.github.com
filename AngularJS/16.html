@@ -1,0 +1,18 @@
+<!doctype html>
+<html>    
+<head>
+<title>angularjs 重复HTML元素</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">          
+</head>    
+<body>
+	<div ng-app ng-init="names=['Jani','Hege','Kai']">
+		<h2>用 ng-repeat 来循环数组</h2>
+		<ul>
+			<li ng-repeat="x in names">
+				{{x}}
+			</li>
+		</ul>
+	</div>
+	<script src="../js/Angular.js"></script> 
+</body>
+</html>

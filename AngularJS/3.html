@@ -1,0 +1,16 @@
+<!doctype html>
+<html>    
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">                
+<script src="../js/1.js"></script>    
+</head>    
+<body>
+	<!-- HTML5 允许扩展的（自制的）属性，以 data- 开头。 -->
+	<!-- AngularJS 属性以 ng- 开头，但是您可以使用 data-ng- 来让网页对 HTML5 有效。 -->
+	<div data-ng-app>
+		<p>姓名：<span data-ng-init="firstName='John'"></span></p>
+		<p data-ng-bind="firstName"></p>
+	</div>
+	<script src="../js/Angular.js"></script> 
+</body>
+</html>

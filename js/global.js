@@ -175,8 +175,76 @@ var globalMethod = {
       }
       obj.append(txt[num]);
     },interval)
-  }
+  },
   /* 打印文字 -End */
+
+  /* 跨浏览器添加事件 */
+  addEvent: function(obj,type,fn){
+    // obj对象用原生Js获取
+    if(obj.addEventListener){
+      obj.addEventListener(type, fn, false);
+    } else if(obj.attachEvent){ // IE
+      obj.attachEvent('on' + type, fn);
+    }
+  },
+  /* 跨浏览器添加事件 - End */
+
+  /* 跨浏览器移除事件 */
+  removeEvent: function(obj,type,fn){
+    if(obj.removeEventListener){
+      obj.removeEventListener(type, fn, false);
+    } else if(obj.detachEvent){ // IE
+      obj.detachEvent('on' + type,fn)
+    }
+  },
+  /* 跨浏览器移除事件 - End */
+
+  /* 跨浏览器阻止默认事件 */
+  preDef: function(ev){
+    var e = ev || window.event;
+    if(e.preventDefault){
+      e.preventDefault();
+    } else{
+      e.returnValue = false;
+    }
+  },
+  /* 跨浏览器阻止默认事件 - End */
+
+  /* 跨浏览器阻止事件冒泡 */
+  preBub: function(ev){
+    var e = ev || window.event;
+    if(e.stopPropagation){
+      e.stopPropagation();
+    } else{  // IE
+      e.cancelBubble = true;
+    }
+  },
+  /* 跨浏览器阻止事件冒泡 - End */
+
+  /* 跨浏览器获取滚动条位置 */
+  getSp: function(){
+    return {
+      top: document.documentElement.scrollTop || document.body.scrollTop,
+      left: document.documentElement.scrollLeft || document.body.scrollLeft
+    }
+  },
+  /* 跨浏览器获取滚动条位置 - End */
+
+  /* 跨浏览器获取可视窗口大小 */
+  getWindow: function(){
+    if(typeof window.innerWidth != 'undefined'){
+      return {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
+    } else{
+      return {  // IE8及以下
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight
+      }
+    }
+  }
+  /* 跨浏览器获取可视窗口大小 - End */
 };
 /*公用方法 - End*/
 
