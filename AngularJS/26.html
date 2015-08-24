@@ -16,7 +16,7 @@
 	<script>
 		var app = angular.module('myApp',[]);
 		app.controller('customersCtrl',function($scope,$http){
-			$http.get('http://localhost/AngularJS/Customers_JSON.php').
+			$http.get('http://zuses.github.io/AngularJS/Customers_JSON.php').
 			success(function(response){
 				$scope.names = response.records;
 			})
