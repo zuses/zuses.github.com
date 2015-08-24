@@ -5,7 +5,6 @@
 *.tmp
 *.err
 *.dll
-*.php
 *.txt
 /a/
 /data/
