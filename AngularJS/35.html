@@ -1,0 +1,20 @@
+<!doctype html>
+<html>    
+<head>
+<title>angularjs模块 带有控制器的模块</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+<script src="../js/Angular.js"></script>        
+</head>    
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		{{firstName + ' ' + lastName}}
+	</div>
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope){
+			$scope.firstName = 'Jonh';
+			$scope.lastName = 'Doe';
+		})
+	</script>
+</body>
+</html>

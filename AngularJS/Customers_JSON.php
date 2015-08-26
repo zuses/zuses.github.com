@@ -1,4 +1,5 @@
-[
+{
+	"records":[
 {
 "Name" : "Alfreds Futterkiste",
 "City" : "Berlin",
@@ -85,3 +86,4 @@
 "Country" : "Poland"
 }
 ]
+}

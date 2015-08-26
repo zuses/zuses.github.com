@@ -1,0 +1,21 @@
+<!doctype html>
+<html>    
+<head>
+<title>angularjs ng-disabled 指令</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+<script src="../js/Angular.js"></script>        
+</head>    
+<body>
+	<div ng-app ng-init="mySwitch=true">
+		<p>
+			<button ng-disabled="mySwitch">点击!</button>
+		</p>
+		<p>
+			<input type="checkbox" ng-model="mySwitch">
+		</p>
+		<p>
+			{{mySwitch}}
+		</p>
+	</div>
+</body>
+</html>

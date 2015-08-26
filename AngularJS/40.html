@@ -1,0 +1,25 @@
+<!doctype html>
+<html>    
+<head>
+<title>angularjs 全局API-uppercase()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+<script src="../js/Angular.js"></script>        
+</head>    
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<!-- angular.lowercase()	转换字符串为小写 -->
+		<!-- angular.uppercase()	转换字符串为大写 -->
+		<!-- angular.isString()		判断给定的对象是否为字符串，如果是返回 true。 -->
+		<!-- angular.isNumber()		判断给定的对象是否为数字，如果是返回 true。 -->
+		<p>{{x1}}</p>
+		<p>{{x2}}</p>
+	</div>
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope){
+			$scope.x1 = 'john';
+			$scope.x2 = angular.uppercase($scope.x1);
+		}) 
+	</script>
+</body>
+</html>
