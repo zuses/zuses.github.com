@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	<style>
+		*{margin: 0;padding: 0;}
+		div{max-width: 640px;height: 200px;background-color: #ccc;margin: 0 auto;}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script src="../sea-modules/sea.js"></script>
+<script>
+	seajs.config({
+		base: '../sea-modules',
+		alias: {
+			jquery: 'jquery-1.11.3.min.js',
+			hello : 'hello.js'
+		},
+		charset: 'utf-8'
+	})
+
+	seajs.use(['jquery','hello'],function(){
+		$('div').text('some text');
+		hello();
+	});
+</script>
+</html>
