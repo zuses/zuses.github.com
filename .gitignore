@@ -5,7 +5,6 @@
 *.tmp
 *.err
 *.dll
-*.txt
 /a/
 /data/
 /dede/
