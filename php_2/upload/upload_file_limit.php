@@ -11,6 +11,12 @@
 			echo "Type:".$_FILES['file']['type']."<br>";   			// $_FILES["file"]["type"] - 被上传文件的类型
 			echo "Size:".($_FILES['file']['size']/1024)."KB<br>";   // $_FILES["file"]["size"] - 被上传文件的大小，以字节计
 			echo "Stored in:".$_FILES['file']['tmp_name']."<br>";	// $_FILES["file"]["tmp_name"] - 存储在服务器的文件的临时副本的名称
+			if(file_exists("upload/".$_FILES['file']['name'])){
+				echo $_FILES['file']['name']." alreay exists";
+			} else{
+				move_uploaded_file($_FILES['file']['tmp_name'], 'upload/'.$_FILES['file']['name']);
+				echo "Stored in "."upload/".$_FILES['file']['name'];
+			}
 		}
 	
 	} else{
