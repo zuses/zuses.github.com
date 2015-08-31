@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Php AJAX 投票</title>
+	<script src="js/poll.js"></script>
+</head>
+<body>
+	<div id="poll">
+		<h2>Do you like PHP and AJAX so far?</h2>
+
+		<form>
+			Yes: 
+			<input type="radio" name="vote" 
+			value="0" onclick="getVote(this.value)">
+			<br />
+			No: 
+			<input type="radio" name="vote" 
+			value="1" onclick="getVote(this.value)">
+		</form>
+	</div>
+</body>
+</html>

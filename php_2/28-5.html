@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Php AJAX RSS 阅读器</title>
+	<script src="js/getrss.js"></script>
+</head>
+<body>
+	<form> 
+		Select an RSS-Feed:
+		<select onchange="showRSS(this.value)">
+			<option value="Google">Google News</option>
+			<option value="MSNBC">MSNBC News</option>
+		</select>
+	</form>
+
+	<p><div id="rssOutput">
+	<b>RSS Feed will be listed here.</b></div></p>
+</body>
+</html>

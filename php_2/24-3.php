@@ -7,8 +7,7 @@
 <body>
 	<?php 
 		// 防止 E-mail 注入
-		function spamcheck($field)
-		  {
+		function spamcheck($field){
 		  //filter_var() sanitizes the e-mail 
 		  //address using FILTER_SANITIZE_EMAIL
 		  // FILTER_SANITIZE_EMAIL 从字符串中删除电子邮件的非法字符
@@ -25,7 +24,7 @@
 		    {
 		    return FALSE;
 		    }
-		  }
+		}
 
 		if (isset($_REQUEST['email']))
 		//if "email" is filled out, send email
