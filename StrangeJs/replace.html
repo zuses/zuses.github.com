@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>replace() 方法</title>
+</head>
+<body>
+	<div id="ins">
+		<img src="123ABc123abc.jpg" alt="">
+	</div>
+</body>
+<script>
+	var ins = document.getElementById('ins');
+	var img = ins.getElementsByTagName('img')[0];
+	var imgSrc = img.src;
+	document.onclick = function(){
+		// imgSrc = imgSrc.replace(/123/,'abc'); // 匹配第一个
+		// imgSrc = imgSrc.replace(/aBc/i,'123');  // 不区分大小写
+		imgSrc = imgSrc.replace(/123/g,'abc');  // 全局替换
+		console.log(imgSrc);
+	}
+</script>
+</html>

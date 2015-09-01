@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sort() 方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// 按字母顺序排序
+	var array1 = ['George','John','Thomas','James','Adrew','Martin'];
+	var array2 = [10,5,40,25,1000,1];
+
+	console.log(array1.sort());
+	console.log(array2.sort());
+
+	function sortNumber(a,b){
+		return a - b;
+	}
+	console.log(array2.sort(sortNumber))
+</script>
+</html>
