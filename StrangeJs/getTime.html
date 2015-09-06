@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getTime() 方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	setInterval(function(){
+		var date = new Date();
+		document.body.innerHTML = date.toLocaleString();
+	}, 1000);
+	var now = new Date();
+	var time = now.getTime();
+	year = Math.floor(time/1000/60/60/24/365);
+	console.log('距1970/1/1已有'+ year + '年时间')
+</script>
+</html>

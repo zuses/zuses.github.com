@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  
+</body>
+<script>
+  var a = {
+    checkBrowser : function(){
+    var u     =   window.navigator.userAgent.toLocaleLowerCase(),
+      msie    =   /(msie) ([\d.]+)/,
+      chrome  =   /(chrome)\/([\d.]+)/,
+      firefox =   /(firefox)\/([\d.]+)/,
+      safari  =   /(safari)\/([\d.]+)/,
+      opera   =   /(opera)\/([\d.]+)/,
+      ie11    =   /(trident)\/([\d.]+)/,
+      b       =   u.match(msie)||u.match(chrome)||u.match(firefox)||u.match(safari)||u.match(opera)||u.match(ie11);
+      return {name: b[1], version: parseInt(b[2])};
+    },
+    brw : checkBrowser()
+  }
+  console.log(a.brw)
+  function checkBrowser(){
+    var u     =   window.navigator.userAgent.toLocaleLowerCase(),
+      msie    =   /(msie) ([\d.]+)/,
+      chrome  =   /(chrome)\/([\d.]+)/,
+      firefox =   /(firefox)\/([\d.]+)/,
+      safari  =   /(safari)\/([\d.]+)/,
+      opera   =   /(opera)\/([\d.]+)/,
+      ie11    =   /(trident)\/([\d.]+)/,
+      b       =   u.match(msie)||u.match(chrome)||u.match(firefox)||u.match(safari)||u.match(opera)||u.match(ie11);
+      return {name: b[1], version: parseInt(b[2])};
+  }
+  var browser = checkBrowser();
+  function browsers(name,version){
+    var flag = false;
+    if (browser.name === name && browser.version === version) {
+      flag = true;
+    };
+    return flag;
+  }
+  var isIE6 = browsers('msie',11);
+  document.write(isIE6);
+</script>
+</html>

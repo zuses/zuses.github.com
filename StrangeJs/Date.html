@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date 对象</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function date(){
+		var d = new Date();
+		var day = d.getDate();
+		var week = d.getDay();
+		var month = d.getMonth() + 1;
+		var year = d.getFullYear();
+		var hour = d.getHours();
+		var min = d.getMinutes();
+		var sec = d.getSeconds();
+		document.body.innerHTML = '今天是' + year + '年' + month + '月' + day + '号，' + "<span style='color: #f00;'>" + hour + ':' + min + ':' + sec + "</span>" + ' 本周的第' + week + '天';
+	}
+	setInterval(date,1000);
+</script>
+</html>
