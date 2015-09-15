@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>继承函数--封装</title>
+	<script src="pro_global.js"></script>
 </head>
 <script>
 	function Student(props){
@@ -23,7 +24,7 @@
 		child.prototype = new F();
 		child.prototype.constructor = child;
 	}
-	
+
 	inheritsFunc(PrimaryStudent,Student);
 	PrimaryStudent.prototype.getGrade = function(){
 		return this.grade;
@@ -37,6 +38,7 @@
 	});
 	console.log(xiaoming.name)
 	console.log(xiaoming.grade)
+	console.log(globalMethod.IsPC())
 </script>
 <body>
 	
