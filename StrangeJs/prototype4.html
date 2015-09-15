@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承函数</title>
+</head>
+<script>
+	function Student(props){
+		this.name = props.name || 'umbrala';
+	}
+	Student.prototype.hello = function(){
+		alert('Hello ' + this.name + '!');
+	}
+	function PrimaryStudent(props){
+		Student.call(this,props);
+		this.grade = props.grade || 1;
+	}
+	function F(){}
+	F.prototype = Student.prototype;
+	PrimaryStudent.prototype = new F();
+	//PrimaryStudent.prototype.constructor = PrimaryStudent;
+	PrimaryStudent.prototype.getGrade = function () {
+	    return this.grade;
+	};
+	var xiaoming = new PrimaryStudent({
+		name:'xiaoming',
+		grade:'3'
+	})
+	console.log(xiaoming.name)
+	console.log(xiaoming.grade)
+</script>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型链</title>
+</head>
+<script>
+	function Student(name){
+		this.name = name;
+		this.hello = function(){
+			alert('Hello, ' + this.name + '!');
+		}
+	}
+	var a = new Student('xiaoming');
+	a.hello();
+</script>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<script>
+	function Animal(){
+		this.name = 'Animal';
+		this.showName = function(){
+			alert(this.name);
+		}
+	}
+
+	function Cat(){
+		this.name = 'Cat';
+	}
+
+	var animal = new Animal();
+	var cat = new Cat();
+	// 通过aplly()或者call()方法,将Animal函数的showName方法给Cat函数使用
+	animal.showName.call(cat,',');
+	// animal.showName.apply(cat,[]);
+</script>
+<body>
+	
+</body>
+</html>

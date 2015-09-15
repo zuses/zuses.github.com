@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<script>
+	function add(a,b){
+		alert(a + b)
+	}
+
+	function sub(a,b){
+		alert(a - b)
+	}
+
+	// add方法替换sub方法，下面实际执行的是add(1,2)
+	add.call(sub,1,2);
+</script>
+<body>
+	
+</body>
+</html>

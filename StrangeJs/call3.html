@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实现继承</title>
+</head>
+<script>
+	function Animal(name){
+		this.name = name;
+		this.showName = function(){
+			alert(this.name);
+		}
+	}
+
+	function Cat(name1){
+		// Animal对象替代this对象，Cat中就有Animal的所有属性和方法了
+		Animal.call(this,name1);
+	}
+
+	var cat = new Cat('DSDA');
+	cat.showName();
+</script>
+<body>
+	
+</body>
+</html>

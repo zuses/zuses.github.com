@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承函数--封装</title>
+</head>
+<script>
+	function Student(props){
+		this.name = props.name || 'umbrala';
+	}
+	Student.prototype.hello = function(){
+		alert('Hello ' + this.name + '!');
+	}
+	function PrimaryStudent(props){
+		Student.call(this,props);
+		this.grade = props.grade || 1;
+	}
+
+	// 封装的继承函数
+	function inheritsFunc(child,parent){
+		var F = function(){}
+		F.prototype = parent.prototype;
+		child.prototype = new F();
+		child.prototype.constructor = child;
+	}
+	
+	inheritsFunc(PrimaryStudent,Student);
+	PrimaryStudent.prototype.getGrade = function(){
+		return this.grade;
+	}
+	PrimaryStudent.prototype.getName = function(){
+		return this.name;
+	}
+	var xiaoming = new PrimaryStudent({
+		name:'xiaoming',
+		grade:3
+	});
+	console.log(xiaoming.name)
+	console.log(xiaoming.grade)
+</script>
+<body>
+	
+</body>
+</html>

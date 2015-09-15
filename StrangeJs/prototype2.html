@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型链</title>
+</head>
+<script>
+	function Student(props){
+		this.name = props.name || '匿名';
+		this.grade = props.grade || 1;
+	}
+
+	Student.prototype.hello = function(){
+		alert('Hello ' + this.name);
+	}
+
+	function createStudents(props){
+		return new Student(props || {});
+	}
+
+	var xiaoming = createStudents({
+		name:'小明'
+	})
+	console.log(xiaoming.grade)
+	console.log(xiaoming.name)
+</script>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多重继承</title>
+</head>
+<script>
+	function Class1(){
+		this.showSub = function(a,b){
+			alert(a - b);
+		}
+	}
+
+	function Class2(){
+		this.showAdd = function(a,b){
+			alert(a + b);
+		}
+	}
+
+	function Class3(){
+		Class1.call(this);
+		Class2.call(this);
+	}
+
+	var class3 = new Class3();
+	class3.showSub(3,1);
+
+	/*
+		说了call ，当然还有 apply，这两个方法基本上是一个意思，区别在于 call 的第二个参数可以是任意类型，而apply的第二个参数必须是数组，也可以是arguments
+	 */
+</script>
+<body>
+	
+</body>
+</html>
