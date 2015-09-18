@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie</title>
+</head>
+<body style="height: 1500px;">
+	
+</body>
+<script>
+	var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+	console.log(scrollTop)
+	document.cookie = 'scrooTop=' + scrollTop;
+	var cok = document.cookie;
+	cok = cok.split(';');
+	cok.length = 2;
+	console.log(cok)
+	scll = parseInt(cok[1].substring(10))
+	console.log(scll)
+</script>
+</html>

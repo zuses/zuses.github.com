@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/tinycon/0.6.3/tinycon.js"></script>
+	<style>
+		*{margin: 0;padding: 0;}
+		ul,li{list-style: none;}
+		.clear{*zoom: 1;}
+		.clear:after{content: "\20";clear: both;display: block;height: 0;line-height: 0;visibility: hidden;}
+		.menu ul li{float: left;width: 50px;height: 30px;background-color: #f90;margin: 5px;color: #fff;cursor: pointer;text-align: center;line-height: 30px;}
+		.menu ul li.on{background-color: red;}
+		.content{width: 120px;height: 120px;overflow: hidden;margin-left: 5px;}
+		.content ul{width: 360px;}
+		.content ul li{width: 120px;height: 120px;background-color: purple;text-align: center;line-height: 120px;font-size: 36px;float: left;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div id="menu" class="menu">
+			<ul class="clear">
+				<li class="on">1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</div>
+		<div id="content" class="content">
+			<ul class="clear">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script>
+	!function(){
+		var menu = document.getElementById('menu');
+		var content = document.getElementById('content');
+		var mLi = menu.getElementsByTagName('li');
+		var cLi = content.getElementsByTagName('li');
+		for(var i = 0;i < mLi.length;i++){
+			mLi[i].onclick = function(){
+				for(var i = 0;i < mLi.length;i++){
+					mLi[i].index = i;
+					mLi[i].className = '';
+					cLi[i].style.display = 'none';
+				}
+				this.className = 'on';
+				cLi[this.index].style.display = 'block';
+				console.log(this.index)
+			}
+		}
+		console.log(cLi)
+	}()
+
+	
+	function getClass(clas){
+		var bd = document.getElementsByTagName('body')[0];
+		var allClass = bd.getElementsByTagName('*');
+		var arr = [];
+		var initNum = 0;
+		for(var i = 0;i < allClass.length;i++){
+			if(allClass[i].className === clas) {
+				//arr[arr.length] = allClass[i];
+				initNum++;
+				arr.push(allClass[i]);
+			}
+		}
+		return arr;
+	}
+
+	var menu = getClass('menu');
+	for(var j = 0;j < menu.length;j++){
+		menu[j].style.color = 'red';
+	}
+</script>
+<script>
+	jQuery(document).ready(function($) {
+	   Tinycon.setOptions({
+	      width: 7,
+	      height: 9,
+	      font: '10px arial',
+	      colour: '#ffffff',
+	      background: '#F60',
+	      fallback: true
+	    });
+		
+		$("#ID").on("click", function(){
+		    var val = $("#setNumber").val();
+		    Tinycon.setBubble( val );
+		});
+	});	
+</script>
+</html>
