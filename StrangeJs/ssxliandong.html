@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		select{width: 100px;}
+	</style>
+</head>
+<body>
+	<div>
+		<select name="" id="sheng">
+			<option value="省"></option>
+		</select>
+		<select name="" id="shi">
+			<option value="市"></option>
+		</select>
+		<select name="" id="xian">
+			<option value="县"></option>
+		</select>
+	</div>
+</body>
+<script>
+	var province 	= ['湖南','四川','河北'];
+	var hnCity     	= ['长沙','常德','岳阳'];
+	var sicCity     = ['成都','攀枝花','宜宾'];
+	var hbCity     	= ['石家庄','唐山','秦皇岛'];
+	var csCounty	= ['望城','宁乡','浏阳'];
+	var cdCounty	= ['桃源','临澧','汉寿'];
+	var yyCounty	= ['华容','湘阴','平江'];
+	var sjzCounty   = ['正定','深泽','无极'];
+	var tsCounty	= ['滦南','玉田','乐亭'];
+	var qhdCounty	= ['抚宁','昌黎','卢龙'];
+	var chdCounty	= ['马尔康','汶川','甘孜'];
+	var pzhCounty	= ['米易','盐边'];
+	var yibCounty	= ['南溪','江安','长宁'];
+</script>
+<script>
+	var sheng 	= document.getElementById('sheng');
+	var shi 	= document.getElementById('shi');
+	var xian 	= document.getElementById('xian');
+	var options = document.getElementsByTagName('option');
+	var listSheng = sheng.getElementsByTagName('option');
+	
+	// 省级操作
+	for(var i = 0;i < province.length;i++){
+		var sOpt = document.createElement('option');
+		sOpt.value = province[i];
+		sheng.appendChild(sOpt);
+	}
+	
+	// 省名变动
+	sheng.onchange = function(){
+		var proIndex = sheng.selectedIndex;
+		var proValue = sheng.options[proIndex].value;
+		shi.options.length = 1;
+		xian.options.length = 1;
+		if(proValue === '湖南'){
+			for(var i = 0;i < hnCity.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = hnCity[i];
+				shi.appendChild(cityOpt);
+			}
+		} else if(proValue === '四川'){
+			for(var i = 0;i < sicCity.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = sicCity[i];
+				shi.appendChild(cityOpt);
+			}
+		} else if(proValue === '河北'){
+			for(var i = 0;i < hbCity.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = hbCity[i];
+				shi.appendChild(cityOpt);
+			}
+		}
+		console.log(proValue)
+	}
+
+	// 市名变动
+	shi.onchange = function(){
+		var cityIndex = shi.selectedIndex;
+		var cityValue = shi.options[cityIndex].value;
+		xian.options.length = 1;
+		if(cityValue === '长沙'){
+			for(var i = 0;i < csCounty.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = csCounty[i];
+				xian.appendChild(cityOpt);
+			}
+		} else if(cityValue === '常德'){
+			for(var i = 0;i < cdCounty.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = cdCounty[i];
+				xian.appendChild(cityOpt);
+			}
+		} else if(cityValue === '岳阳'){
+			for(var i = 0;i < yyCounty.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = yyCounty[i];
+				xian.appendChild(cityOpt);
+			}
+		} else if(cityValue === '石家庄'){
+			for(var i = 0;i < sjzCounty.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = sjzCounty[i];
+				xian.appendChild(cityOpt);
+			}
+		} else if(cityValue === '秦皇岛'){
+			for(var i = 0;i < qhdCounty.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = qhdCounty[i];
+				xian.appendChild(cityOpt);
+			}
+		} else if(cityValue === '唐山'){
+			for(var i = 0;i < tsCounty.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = tsCounty[i];
+				xian.appendChild(cityOpt);
+			}
+		} else if(cityValue === '成都'){
+			for(var i = 0;i < chdCounty.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = chdCounty[i];
+				xian.appendChild(cityOpt);
+			}
+		} else if(cityValue === '攀枝花'){
+			for(var i = 0;i < pzhCounty.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = pzhCounty[i];
+				xian.appendChild(cityOpt);
+			}
+		} else if(cityValue === '宜宾'){
+			for(var i = 0;i < yibCounty.length;i++){
+				var cityOpt = document.createElement('option');
+				cityOpt.innerHTML = cityOpt.value = yibCounty[i];
+				xian.appendChild(cityOpt);
+			}
+		}
+		console.log(cityValue)
+	}
+
+	// 县名改动
+	xian.onchange = function(){
+		var cutyIndex = xian.selectedIndex;
+		var cutyValue = xian.options[cutyIndex].value;
+		console.log(cutyValue)
+	}
+
+	for(var i = 0;i < options.length;i++){
+		options[i].innerHTML = options[i].value;
+	}
+</script>
+</html>

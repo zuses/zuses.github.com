@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>省市县联动</title>
+	<style>
+		select{width: 100px;}
+	</style>
+	<script src="js/admArea.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<select name="" id="sheng">
+			<option value="省/直辖市/自治区"></option>
+		</select>
+		<select name="" id="shi">
+			<option value="市/自治州"></option>
+		</select>
+		<select name="" id="xian">
+			<option value="县"></option>
+		</select>
+	</div>
+</body>
+<script>
+	var wrap 		= document.getElementById('wrap');
+	var sheng 		= document.getElementById('sheng');
+	var shi 		= document.getElementById('shi');
+	var xian 		= document.getElementById('xian');
+	var options 	= document.getElementsByTagName('option');
+	var listSheng 	= sheng.getElementsByTagName('option');
+	
+	// 省级操作
+	for(var i = 0;i < province.length;i++){
+		var sOpt = document.createElement('option');
+		sOpt.value = province[i];
+		sheng.appendChild(sOpt);
+	}
+	
+	console.log('中国有' + province.length + '个省/直辖市/自治区')
+
+	// 省名变动
+	sheng.onchange = function(){
+		var proIndex = sheng.selectedIndex;
+		var proValue = sheng.options[proIndex].value;
+		shi.options.length = 1;
+		xian.options.length = 1;
+		if(xian.length > 0){
+			if(proValue === '北京' || proValue === '天津' || proValue === '上海' || proValue === '重庆'){
+				wrap.appendChild(xian);
+				wrap.removeChild(xian);
+				shi.options[0].innerHTML = '区/县';
+			} else{
+				wrap.appendChild(xian);
+				shi.options[0].innerHTML = '市/自治州';
+			}
+		}
+		for(var i = 0;i < province.length;i++){
+			if(proValue === province[i]){
+				for(var j = 0;j < adm_lv1[proValue].length;j++){
+					var cityOpt = document.createElement('option');
+					cityOpt.innerHTML = cityOpt.value = adm_lv1[proValue][j];
+					shi.appendChild(cityOpt);
+				}
+			}
+		}
+		console.log(proValue + '省有' + adm_lv1[proValue].length + '个市');
+	}
+
+	// 市名变动
+	shi.onchange = function(){
+		var proIndex = sheng.selectedIndex;
+		var proValue = sheng.options[proIndex].value;
+		var cityIndex = shi.selectedIndex;
+		var cityValue = shi.options[cityIndex].value;
+		if(proValue === '北京' || proValue === '天津' || proValue === '上海' || proValue === '重庆'){
+			return;
+		} else{
+			xian.options.length = 1;
+			for(var i = 0;i < province.length;i++){
+				for(var j = 0;j < adm_lv1[province[i]].length;j++){
+					if(cityValue === adm_lv1[province[i]][j]){
+						var coutyArr = adm_lv2[province[i]][adm_lv1[province[i]][j]];
+						for(var k = 0;k < coutyArr.length;k++){
+							var cityOpt = document.createElement('option');
+							cityOpt.innerHTML = cityOpt.value = coutyArr[k];
+							xian.appendChild(cityOpt);
+						}
+					}
+				}
+			}
+		}
+		console.log(cityValue + '市有' + coutyArr.length + '个县/地级市');
+	}
+
+	// 县名改动
+	xian.onchange = function(){
+		var cutyIndex = xian.selectedIndex;
+		var cutyValue = xian.options[cutyIndex].value;
+	}
+
+	for(var i = 0;i < options.length;i++){
+		options[i].innerHTML = options[i].value;
+	}
+</script>
+</html>

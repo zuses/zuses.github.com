@@ -12,7 +12,7 @@
 		.clear:after{content: "\20";clear: both;display: block;height: 0;line-height: 0;visibility: hidden;}
 		.menu ul li{float: left;width: 50px;height: 30px;background-color: #f90;margin: 5px;color: #fff;cursor: pointer;text-align: center;line-height: 30px;}
 		.menu ul li.on{background-color: red;}
-		.content{width: 120px;height: 120px;overflow: hidden;margin-left: 5px;}
+		.content{width: 120px;height: 120px;overflow: hidden;margin-left: 5px;position: relative;}
 		.content ul{width: 360px;}
 		.content ul li{width: 120px;height: 120px;background-color: purple;text-align: center;line-height: 120px;font-size: 36px;float: left;}
 	</style>
@@ -21,7 +21,7 @@
 	<div class="wrap">
 		<div id="menu" class="menu">
 			<ul class="clear">
-				<li class="on">1</li>
+				<li>1</li>
 				<li>2</li>
 				<li>3</li>
 			</ul>
@@ -39,42 +39,39 @@
 	!function(){
 		var menu = document.getElementById('menu');
 		var content = document.getElementById('content');
+		var cUl = document.getElementById('content').getElementsByTagName('ul')[0];
 		var mLi = menu.getElementsByTagName('li');
 		var cLi = content.getElementsByTagName('li');
+		var cWidth = cLi[0].offsetWidth;
+		var timer = null;
+		var speed = 10;
+		cUl.style.position = 'absolute';
+		cUl.style.left = 0;
 		for(var i = 0;i < mLi.length;i++){
+			mLi[0].className = 'on';
 			mLi[i].onclick = function(){
 				for(var i = 0;i < mLi.length;i++){
 					mLi[i].index = i;
 					mLi[i].className = '';
-					cLi[i].style.display = 'none';
 				}
 				this.className = 'on';
-				cLi[this.index].style.display = 'block';
-				console.log(this.index)
+				var index = this.index;
+				clearInterval(timer)
+				timer = setInterval(function(){
+					if(cUl.offsetLeft === -cWidth*index){
+						clearInterval(timer)
+						console.log(index)
+					} else{
+						if(cUl.offsetLeft <= -cWidth*(cLi.length - 1)){
+							speed = -speed;
+						} else if(cUl.offsetLeft >= 0){
+							speed = 10;
+						}
+						cUl.style.left = cUl.offsetLeft - speed + 'px';
+					}
+				},50)
 			}
 		}
-		console.log(cLi)
 	}()
-
-		
-	function getClass(clas){
-		var bd = document.getElementsByTagName('body')[0];
-		var allClass = bd.getElementsByTagName('*');
-		var arr = [];
-		var initNum = 0;
-		for(var i = 0;i < allClass.length;i++){
-			if(allClass[i].className === clas) {
-				//arr[arr.length] = allClass[i];
-				initNum++;
-				arr.push(allClass[i]);
-			}
-		}
-		return arr;
-	}
-
-	var menu = getClass('menu');
-	for(var j = 0;j < menu.length;j++){
-		menu[j].style.color = 'red';
-	}
 </script>
 </html>
