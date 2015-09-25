@@ -4,7 +4,11 @@
 	<meta charset="UTF-8">
 	<title>省市县联动</title>
 	<style>
+		*{padding: 0;margin: 0;line-height: 24px;}
 		select{width: 100px;}
+		h1{margin: 20px 0;}
+		h5{margin-bottom: 10px;}
+		h1 h5{margin-top: 10px;font-size: 20px;}
 	</style>
 	<script src="js/admArea.js"></script>
 </head>
@@ -20,12 +24,21 @@
 			<option value="县"></option>
 		</select>
 	</div>
+	<div id="tips">
+		<h1></h1>
+		<p></p>
+		<p></p>
+	</div>
 </body>
 <script>
 	var wrap 		= document.getElementById('wrap');
 	var sheng 		= document.getElementById('sheng');
 	var shi 		= document.getElementById('shi');
 	var xian 		= document.getElementById('xian');
+	var tips 		= document.getElementById('tips');
+	var tipTile 	= tips.getElementsByTagName('h1')[0];
+	var tipText 	= tips.getElementsByTagName('p')[0];
+	var tipText1 	= tips.getElementsByTagName('p')[1];
 	var options 	= document.getElementsByTagName('option');
 	var listSheng 	= sheng.getElementsByTagName('option');
 	
@@ -36,7 +49,7 @@
 		sheng.appendChild(sOpt);
 	}
 	
-	console.log('中国有' + province.length + '个省/直辖市/自治区')
+	tipTile.innerHTML = '中国有' + province.length + '个省/直辖市/自治区<h5>分别是：' + province + '</h5>';
 
 	// 省名变动
 	sheng.onchange = function(){
@@ -63,7 +76,8 @@
 				}
 			}
 		}
-		console.log(proValue + '省有' + adm_lv1[proValue].length + '个市');
+		tipText.innerHTML = '<h4>' + proValue + '省有' + adm_lv1[proValue].length + '个市</h4><h5>分别是：' + adm_lv1[proValue] + '</h5>';
+		tipText1.innerHTML = '';
 	}
 
 	// 市名变动
@@ -89,7 +103,7 @@
 				}
 			}
 		}
-		console.log(cityValue + '市有' + coutyArr.length + '个县/地级市');
+		tipText1.innerHTML = '<h4>' + cityValue + '市有' + coutyArr.length + '个县/地级市</h4><h5>分别是：'  + adm_lv2[proValue][cityValue] + '</h5>';
 	}
 
 	// 县名改动

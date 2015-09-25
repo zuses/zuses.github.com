@@ -58,6 +58,7 @@
 				var index = this.index;
 				clearInterval(timer)
 				timer = setInterval(function(){
+					document.title = speed;
 					if(cUl.offsetLeft === -cWidth*index){
 						clearInterval(timer)
 						console.log(index)
@@ -69,7 +70,7 @@
 						}
 						cUl.style.left = cUl.offsetLeft - speed + 'px';
 					}
-				},50)
+				},10)
 			}
 		}
 	}()
