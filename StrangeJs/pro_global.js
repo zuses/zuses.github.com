@@ -11,7 +11,7 @@ proto.prototype.checkBrowser = function(){
 	return {name: b[1], version: parseInt(b[2])};
 }
 proto.prototype.bombBox = function(box){
-	var windows     =   $(window);
+	  var windows     =   $(window);
     var winWidth    =   windows.width();
     var winHeight   =   windows.height();
     var docHeight   =   $(document).height();

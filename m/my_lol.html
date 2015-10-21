@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<style>
+		html, body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0;word-wrap: break-word;word-break:break-all;}
+		body, button, input, select, textarea {font: 12px/1.5 "Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu; color:#666}
+		h1, h2, h3, h4, h5, h6 { font-size: 100% }
+		address, cite, dfn, em, var { font-style: normal }
+		ul, ol, dl { list-style: none }
+		a {outline: none ;font-family:"Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;cursor: pointer;}
+		img {border: 0}
+		button, input, select, textarea { font-size: 100% ;font-family:"Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;outline: none;}
+		table { border-collapse: collapse; border-spacing: 0 }
+		q:before,q:after{content:'';} 
+		.clear{*zoom:1} 
+		.clear:after{content:'\20';display:block;height:0;line-height:0;visibility:hidden;clear:both} 
+		a{ text-decoration:none} 
+		a:hover{ text-decoration:none;}
+		html,body{width: 100%;height: 100%;overflow: hidden;}
+		body{background: url(../img/m_door_bg.jpg) center top;background-size: cover;}
+		#text{margin: 2% auto;max-width: 640px;font-size: .51rem;color: #fff;height: 96%;background: #f00;padding: 0 10px;}
+	</style>
+	<script src="../js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div id="text" style="width: 32px;text-align: center;"></div>
+</body>
+<script>
+	var str = '热烈祝贺胡凯凯同学晋升不屈白银5';
+	var strArr = str.split('');
+	var strLen = strArr.length;
+	var c = -1;
+	var text = document.getElementById('text');
+	setInterval(function(){
+		c++;
+		if(c >= strLen){
+			c = strLen;
+			return;
+		}
+		text.innerHTML += strArr[c];
+	},100)
+	$(window).resize(function(event) {
+		var html = $('html');
+		var winWidth = $(window).width();
+		var scales = Math.floor(40/320);
+		html.css('fontSize',scales*winWidth);
+	});
+	$(function(){
+		var html = $('html');
+		var winWidth = $(window).width();
+		var scales = 40/320;
+		console.log(scales)
+		html.css('fontSize',scales*winWidth);
+	});
+</script>
+</html>
