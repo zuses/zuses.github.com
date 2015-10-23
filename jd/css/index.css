@@ -16,7 +16,7 @@ body{max-width: 640px;margin: 0 auto;}
 .nav_classic span{text-indent: -100px;overflow: hidden;width: 20.5px;height: 29.5px;margin: 8px 0 0 10px;background-position: -2px -30px;} 
 
 .banner{margin-top: 8px;padding: 3px;}
-.imgWrap ul li img{max-width: 640px;height: auto;min-width: 320px;width: 100%;}
+.imgWrap ul li img{max-width: 640px;height: auto;width: 100%;}
 .ban_top{margin-bottom: 10px;}
 .ban_bottom ul li{text-align: center;float: left;width: 25%;height: 50px;}
 .ban_bottom ul li span{display: block;margin-top: 5px;}
