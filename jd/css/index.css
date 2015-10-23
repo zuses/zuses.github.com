@@ -8,7 +8,7 @@ body{max-width: 640px;margin: 0 auto;}
 .nav_log{background-position: 0 0;width: 20px;height: 15px;position: absolute;left: 12px;top: 12px;}
 .nav_form{margin-left: 40px;margin-right: 10px;}
 .form_wrap{width: auto;margin-right: 32px;margin-top: 7px;height: 30px;border-radius: 5px;background-color: #fff;border: 1px solid #ccc;}
-.form_wrap input{border: none;width: 80%;margin-left: 5px;height: 1.5em;display: block;line-height: 1.5em;margin: 5px 0 0 10px;color: #666;}
+.form_wrap input{border: none;width: 80%;margin-left: 5px;height: 1.5em;display: block;line-height: 1.5em;margin: 5px 0 0 5px;color: #666;}
 .nav_form .search_btn{position: absolute;right: 42px;top: 7px;width: 30px;height: 30px;background-color: #eee;border-radius: 0 5px 5px 0;border: 1px solid #ccc;border-left: none;}
 .nav_form .search_btn span{display: block;text-indent: -100px;background-position: -83.5px 0;width: 14px;height: 14px;overflow: hidden;margin: 7px 7px 0;}
 .inp_wrap{margin-right: 28px;width: auto;}
