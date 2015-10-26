@@ -30,9 +30,9 @@ body{max-width: 640px;margin: 0 auto;}
 .li_main .main_style1 .goods_list{width: 33.3%;float: left;padding: 14px 6.875% 0;border-left: 1px solid #dadada;margin-left: -1px;}
 .li_main .price{color: #f60;text-align: center;display: block;}
 .li_main .discount{display: block;text-align: center;background-color: #d8505c;color: #fff;padding: 3px 0;margin: 8px 0;}
-.main_style2 .left_top{float: right;width: 50%;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;}
-.main_style2 .left_bottom{float: right;width: 50%;}
-.main_style2 .right_all{float: left;width: 50%;border-top: 1px solid #ccc;border-right: 1px solid #ccc;}
-.main_style3 .left_top{float: left;width: 50%;border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;}
-.main_style3 .left_bottom{float: left;width: 50%;}
-.main_style3 .right_all{float: right;width: 50%;border-top: 1px solid #ccc;border-left: 1px solid #ccc;}
+.main_style2 .left_top{float: right;width: 50%;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;border-left: 1px solid #ccc;}
+.main_style2 .left_bottom{float: right;width: 50%;border-left: 1px solid #ccc;}
+.main_style2 .right_all{float: left;width: 50%;border-top: 1px solid #ccc;}
+.main_style3 .left_top{float: left;width: 50%;border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;border-right: 1px solid #ccc;}
+.main_style3 .left_bottom{float: left;width: 50%;border-right: 1px solid #ccc;}
+.main_style3 .right_all{float: right;width: 50%;border-top: 1px solid #ccc;}
