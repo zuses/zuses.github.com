@@ -511,26 +511,32 @@
 </script>
 <script>
 	var flag = false;
-	$(window).click(function(){
+	$('.jd-head').click(function(){
+		$('.cover').text('');
 		$('.cover').css({
 			'display' 	: 'block'
 		});
-		printWord();
+		var txt = $('.cover').text();
+		if(txt == ''){
+			printWord();
+		}
 	});
 	$('.cover').click(function(event){
-		$(this).css({
-			'display' 	: 'none'
-		});
-		$('.cover').text('');
+		setTimeout(function(){
+			$('.cover').text('').css({
+				'display' 	: 'none'
+			});
+		}, 100)
 		event.stopPropagation();
 	});
 
 	function printWord(){
-		var str = '此站已被黑，全部商品一律1折！前提是晚上得跟我视频。';
+		var str = '全部商品一律1折！';
 		var strArr = str.split('');
 		var strLen = strArr.length;
 		var c = -1;
 		var text = document.getElementsByClassName('cover')[0];
+		var duringTime = 100;
 		setInterval(function(){
 			c++;
 			if(c >= strLen){
@@ -538,7 +544,8 @@
 				return;
 			}
 			text.innerHTML += strArr[c];
-		},100)
+		},duringTime)
+		return duringTime;
 	}
 </script>
 </html>
