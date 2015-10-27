@@ -510,7 +510,6 @@
 	}
 </script>
 <script>
-	var flag = false;
 	$('.jd-head').click(function(){
 		$('.cover').text('');
 		$('.cover').css({
@@ -521,6 +520,16 @@
 			printWord();
 		}
 	});
+	setTimeout(function(){
+		$('.cover').text('');
+		$('.cover').css({
+			'display' 	: 'block'
+		});
+		var txt = $('.cover').text();
+		if(txt == ''){
+			printWord();
+		}
+	},3000)
 	$('.cover').click(function(event){
 		setTimeout(function(){
 			$('.cover').text('').css({
