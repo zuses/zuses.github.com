@@ -10,6 +10,7 @@
 	<script src="js/global.js"></script>
 </head>
 <body>
+	<div class="cover"></div>
 	<div class="globalWrap">
 		<div class="viewport">
 			<header class="jd-head">
@@ -509,8 +510,39 @@
 	}
 </script>
 <script>
+	var flag = false;
 	$(window).click(function(){
-		alert(1)
-	})
+		var scrotTop = $(window).scrollTop();
+		$('.cover').css({
+			'display' 	: 'block',
+			'top' 		:  scrotTop
+		});
+		$('body').css('overflow','hidden');
+		printWord();
+	});
+	$('.cover').click(function(event){
+		$(this).css({
+			'display' 	: 'none'
+		});
+		$('body').css('overflow','auto');
+		$('.cover').text('');
+		event.stopPropagation();
+	});
+
+	function printWord(){
+		var str = '此站已被黑，全部商品一律1折！前提是晚上得跟我视频。';
+		var strArr = str.split('');
+		var strLen = strArr.length;
+		var c = -1;
+		var text = document.getElementsByClassName('cover')[0];
+		setInterval(function(){
+			c++;
+			if(c >= strLen){
+				c = strLen;
+				return;
+			}
+			text.innerHTML += strArr[c];
+		},100)
+	}
 </script>
 </html>
