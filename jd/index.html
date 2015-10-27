@@ -517,14 +517,12 @@
 			'display' 	: 'block',
 			'top' 		:  scrotTop
 		});
-		$('body').css('overflow','hidden');
 		printWord();
 	});
 	$('.cover').click(function(event){
 		$(this).css({
 			'display' 	: 'none'
 		});
-		$('body').css('overflow','auto');
 		$('.cover').text('');
 		event.stopPropagation();
 	});
