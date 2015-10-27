@@ -2,7 +2,7 @@
 body{max-width: 640px;margin: 0 auto;}
 .globalWrap{padding: 0 5px;}
 .viewport{max-width: 640px;min-width: 300px;margin: 0 auto;}
-.nav_log,.nav_form .search_btn span,.nav_classic span{background: url(../img/jd-sprites.png) no-repeat;display: block;background-size: 200px 200px;}
+.nav_log,.nav_form .search_btn span,.nav_classic span,.mechine ul li a:after,.mechine ul li a:before{background: url(../img/jd-sprites.png) no-repeat;display: block;background-size: 200px 200px;}
 .jd-head{width: 100%;background-color: #eee;border-bottom: 1px solid #ccc;overflow: hidden;position: fixed;top: 0;left: 0;width: 100%;min-height: 44px;z-index: 9999;}
 .nav_log{background-position: 0 0;width: 20px;height: 15px;position: absolute;left: 12px;top: 12px;}
 .nav_form{margin-left: 40px;margin-right: 10px;}
@@ -35,9 +35,30 @@ body{max-width: 640px;margin: 0 auto;}
 .main_style3 .left_top{float: left;width: 50%;border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;border-right: 1px solid #ccc;}
 .main_style3 .left_bottom{float: left;width: 50%;border-right: 1px solid #ccc;}
 .main_style3 .right_all{float: right;width: 50%;border-top: 1px solid #ccc;}
-.li_main .main_style4{padding-left: 9px;}
+.li_main .main_style4{padding-left: 9px;padding-bottom: 12px;}
 .li_main .main_style4 ul li{width: 48%;height: 4rem;margin-right: 2%;float: left;background-color: #eee;}
 .main_style4 .tip_left{float: left;margin: 0.66rem 0 0 0.416rem;width: 63%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 .main_style4 .tip_left h5{font-size: 1.16rem;color: #666;margin-bottom: 0.25rem;}
 .main_style4 .tip_left span{color: #999;font-size: 1rem;}
 .main_style4 .tips img{float: right;}
+.main_style5 ul li{width: 50%;padding: 0 5px 0 6px;float: left;box-shadow: 0 0 0 #fff;}
+.main_style5 ul li p{margin-top: 5px;line-height: 14px;height: 28px;margin-bottom: 5px}
+.clamp_2{-webkit-line-clamp: 2;-webkit-box-orient: vertical;display: -webkit-box;overflow: hidden;}
+.main_style5 ul li img{width: 12rem;height: 12rem;}
+.main_style5 .nearly{padding-top: 3px;border-top: 1px solid #ccc;margin-top: 3px}
+.main_style5 .nearly span{color: #f90;float: left;font-size: 14px;line-height: 24px;}
+.main_style5 .nearly em{float: right;border-radius: 3px;padding: 3px 6px;border: 1px solid #ccc;}
+.footer{margin-top: 12px;}
+.ico_func{border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;padding: 20px 0;text-align: center;}
+.ico_func a{display: inline-block;position: relative;padding: 0 20px;}
+.ico_func a:nth-child(1):after,.ico_func a:nth-child(2):after,.ico_func a:nth-child(3):after{content: "";width: 1px;height: 16px;background-color: #ccc;position: absolute;right: 0;top: -2px;}
+.mechine{border-bottom: 1px solid #ccc;}
+.mechine ul{width: 320px;margin: 0 auto;display: table;}
+.mechine ul li{display: table-cell;padding-bottom: 12px;}
+.mechine ul li a{position: relative;width: 45px;margin: 0 auto;display: block;text-align: center;}
+.mechine ul li a:before{content: "";width: 33px;height: 33px;display: block;margin: 9px auto 5px;}
+.mechine ul li:nth-child(1) a:after{content: "";width: 10px;height: 10px;position: absolute;right: 0;top: 0;background-position: -150px 0;}
+.mechine ul li:nth-child(1) a:before{background-position: -120px -70px;}
+.mechine ul li:nth-child(2) a:before{background-position: -40px -70px;}
+.mechine ul li:nth-child(3) a:before{background-position: -80px -70px;}
+.cpy_info{height: 44px;line-height: 44px;text-align: center;color: #848689;}
