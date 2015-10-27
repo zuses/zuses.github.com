@@ -3,7 +3,7 @@ body{max-width: 640px;margin: 0 auto;}
 .globalWrap{padding: 0 5px;}
 .viewport{max-width: 640px;min-width: 300px;margin: 0 auto;}
 .nav_log,.nav_form .search_btn span,.nav_classic span{background: url(../img/jd-sprites.png) no-repeat;display: block;background-size: 200px 200px;}
-.jd-head{width: 100%;background-color: #eee;border-bottom: 1px solid #ccc;overflow: hidden;position: relative;width: 100%;min-height: 44px;}
+.jd-head{width: 100%;background-color: #eee;border-bottom: 1px solid #ccc;overflow: hidden;position: fixed;top: 0;width: 100%;min-height: 44px;}
 .navBar{}
 .nav_log{background-position: 0 0;width: 20px;height: 15px;position: absolute;left: 12px;top: 12px;}
 .nav_form{margin-left: 40px;margin-right: 10px;}
