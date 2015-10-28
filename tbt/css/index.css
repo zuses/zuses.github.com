@@ -25,8 +25,9 @@ body{background-color: #ccc;}
 .screen_2 .scr_top{margin: 40px auto 15px;width: 292px;color: #fefbe2;font-size: 16px;line-height: 20px;}
 .screen_2 .scr_top span{font-size: 18px;}
 .screen_2 .scr_center{position: relative;background: rgba(247,251,208,0.24);width: 278px;height: 278px;border-radius: 139px;margin: 30px auto 0;padding: 20px;}
-.screen_2 .innerCircle{background: rgba(247,251,208,0.24);width: 238px;height: 238px;border-radius: 119px;}
-.screen_2 .innerCircle img{width: 150px;margin: 0 auto;display: block;padding-top: 44px;}
+.screen_2 .innerCircle{background: rgba(247,251,208,0.24);width: 238px;height: 238px;border-radius: 119px;position: relative;}
+.screen_2 .innerCircle img:nth-of-type(1){width: 150px;margin: 0 auto;display: block;padding-top: 44px;}
+.screen_2 .innerCircle img:nth-of-type(2){width: 32px;position: absolute;right: 78px;top: 105px;}
 .screen_2 .circleCity{position: absolute;left: 20px;top: 10px;}
 .screen_2 .circleCity img{width: 238px;}
 .screen_2 .bottomText{position: absolute;bottom: 40px;left: 0;text-align: center;color: #fff;font-size: 16px;width: 100%;line-height: 20px;}
@@ -36,6 +37,7 @@ body{background-color: #ccc;}
 .screen_2 .animate .earth{-webkit-animation: scale1 2.5s ease-out 1s backwards;}
 .screen_2 .animate .circleCity{-webkit-animation: circleCity .3s ease-out 2.5s backwards;}
 .screen_2 .animate .bottomText{-webkit-animation: opacityText 1.5s 3.5s backwards;}
+.screen_2 .animate .innerCircle .tz{-webkit-animation: scale1 1s ease-out 1s backwards;}
 
 @media screen and (max-height: 760px) and (min-height: 621px){
 	.screen_2 .scr_center{margin-top: 32%;}
