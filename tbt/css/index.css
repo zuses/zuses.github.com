@@ -39,6 +39,11 @@ body{background-color: #ccc;}
 .screen_2 .animate .bottomText{-webkit-animation: opacityText 1.5s 3.5s backwards;}
 .screen_2 .animate .innerCircle .tz{-webkit-animation: scale1 1s ease-out 1s backwards;}
 
+.screen_3{height: 100%;position: relative;background: linear-gradient(to bottom,rgba(78,170,200,1),rgba(249,141,97,1));}
+.screen_3 .rabitRun{width: 154.5px;height: 182px;background: url(http://img.to8to.com/wap/weixin/run.png) 0 0 no-repeat;background-size: 3708px 182px;position: absolute;bottom: 40px;left: 50%;margin-left: -77.25px;}
+.screen_3 .animate .rabitRun{-webkit-animation: rabitRun 650ms step-start infinite;}
+
+
 @media screen and (max-height: 760px) and (min-height: 621px){
 	.screen_2 .scr_center{margin-top: 32%;}
 }
