@@ -13,12 +13,24 @@
 	80%{opacity: .2}
 	100%{opacity: 1;}
 }
+
 @-webkit-keyframes bottomArrow{
 	0%{opacity: 1;-webkit-transform: translateY(0)}
 	50%{opacity: .5;-webkit-transform: translateY(5px)}
 	100%{opacity: .2;-webkit-transform: translateY(10px)}
 }
+
 @-webkit-keyframes cloudMove{
 	0%{-webkit-transform: translateX(-190px)}
 	100%{-webkit-transform: translateX(320px)}
+}
+
+@-webkit-keyframes scale1{
+	0%{-webkit-transform: scale3d(.3,.3,.9);opacity: 0;}
+	100%{opacity: 1;}
+}
+
+@-webkit-keyframes circleCity{
+	0%{-webkit-transform: rotate(60deg);opacity: 0;}
+	100%{opacity: 1;}
 }
