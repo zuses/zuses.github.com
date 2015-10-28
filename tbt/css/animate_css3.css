@@ -34,3 +34,8 @@
 	0%{-webkit-transform: rotate(60deg);opacity: 0;}
 	100%{opacity: 1;}
 }
+
+@-webkit-keyframes opacityText{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
