@@ -12,7 +12,7 @@ body{background-color: #ccc;}
 .screen_1 figure img{width: 16.66rem;}
 .bottomArrow{position: absolute;bottom: 0;left: 0;width: 100%;z-index: 10;text-align: center;-webkit-animation: bottomArrow .5s linear infinite alternate;}
 .bottomArrow img{width: 45px;}
-.screen_1 .scrBg{position: absolute;bottom: -4px;left: 0;}
+.screen_1 .scrBg{position: absolute;bottom: -4px;left: 0;width: 100%;}
 .screen_1 .scrBg img{width: 100%;}
 .screen_1 .cloud{position: relative;margin-top: 40px;}
 .screen_1 .cloudAnimate{-webkit-animation: cloudMove 10s linear infinite;}
@@ -40,8 +40,15 @@ body{background-color: #ccc;}
 .screen_2 .animate .innerCircle .tz{-webkit-animation: scale1 1s ease-out 1s backwards;}
 
 .screen_3{height: 100%;position: relative;background: linear-gradient(to bottom,rgba(78,170,200,1),rgba(249,141,97,1));}
-.screen_3 .rabitRun{width: 154.5px;height: 182px;background: url(http://img.to8to.com/wap/weixin/run.png) 0 0 no-repeat;background-size: 3708px 182px;position: absolute;bottom: 40px;left: 50%;margin-left: -77.25px;}
+.screen_3 .rabitRun{width: 309px;height: 364px;background: url(http://img.to8to.com/wap/weixin/run.png) 0 0 no-repeat;-webkit-transform: scale(.65);position: absolute;bottom: -30px;left: 50%;margin-left: -150.45px;z-index: 10;}
 .screen_3 .animate .rabitRun{-webkit-animation: rabitRun 650ms step-start infinite;}
+.screen_3 .cityBg{background: url(http://img.to8to.com/wap/weixin/bg.png) 0 0 no-repeat;width: 100%;height: 61px;position: absolute;bottom: 80px;}
+.screen_3 .animate .cityBg{-webkit-animation: cityBg 3500ms step-start infinite;}
+.screen_3 .tips{padding-top: 50px;text-align: center;color: #fcfce5;}
+.screen_3 .tips p{font-size: 26px;font-weight: bolder;margin-bottom: 5px;}
+.screen_3 .tips span{font-size: 16px;margin-top: 33px;display: block;}
+.screen_3 .cloud img{height: 106px;position: absolute;z-index: 1;opacity: .15;left: 45px;top: 100px;}
+.screen_3 .animate .cloud img{-webkit-animation: cloudMove 10s linear infinite;}
 
 
 @media screen and (max-height: 760px) and (min-height: 621px){

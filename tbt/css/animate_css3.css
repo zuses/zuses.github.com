@@ -41,29 +41,57 @@
 }
 
 @-webkit-keyframes rabitRun{
-	0%{background-position: 0 0; }
-    4.2%{background-position: -154.5px 0;}
-    8.4%{background-position: -309px 0;}
-    12.6%{background-position: -463.5px 0;}
-    16.8%{background-position: -618px 0; }
-    21%{background-position: -772.5px 0;}
-    25.2%{background-position: -927px 0;}
-    29.4%{background-position: -1081.5px 0;}
-    33.6%{background-position: -1236px 0;}
-    37.8%{background-position: -1390.5px 0;}
-    42%{ background-position: -1545px 0;}
-    46.2%{background-position: -1699.5px 0;}
-    50.4%{background-position: -1854px 0;}
-    54.6%{background-position: -2008.5px 0;}
-    58.8%{background-position: -2163px 0;}
-    63%{background-position: -2317.5px 0;}
-    67.2%{background-position: -2472px 0;}
-    71.4%{background-position: -2626.5px 0;}
-    75.6%{background-position: -2781px 0;}
-    79.8%{background-position: -2935.5px 0;}
-    84%{background-position: -3090px 0;}
-    88.2%{background-position: -3244.5px 0;}
-    92.4%{background-position: -3399px 0;}
-    96.6%{background-position: -3553.5px 0;}
-    100%{background-position: -3708px 0;}
+	0%{  background-position: 0 0; }
+    4.2%{  background-position: -309px 0; }
+    8.4%{  background-position: -618px 0; }
+    12.6%{  background-position: -927px 0; }
+    16.8%{ background-position: -1236px 0;  }
+    21%{ background-position: -1545px 0;  }
+    25.2%{ background-position: -1854px 0;  }
+    29.4%{ background-position: -2163px 0;  }
+    33.6%{  background-position: -2472px 0; }
+    37.8%{  background-position: -2781px 0;  }
+    42%{ background-position: -3090px 0;   }
+    46.2%{  background-position: -3399px 0;  }
+    50.4%{  background-position: -3708px 0;  }
+    54.6%{  background-position: -4017px 0;  }
+    58.8%{  background-position: -4326px 0;  }
+    63%{  background-position: -4635px 0;  }
+    67.2%{  background-position: -4944px 0;  }
+    71.4%{  background-position: -5253px 0;  }
+    75.6%{  background-position: -5562px 0;  }
+    79.8%{  background-position: -5871px 0;  }
+    84%{  background-position: -6180px 0;  }
+    88.2%{  background-position: -6489px 0;  }
+    92.4%{  background-position: -6798px 0;  }
+    96.6%{  background-position: -7107px 0;  }
+    100%{  background-position: 0 0;  }
+}
+
+@-webkit-keyframes cityBg{
+	0%{  background-position: 0 0; }
+    4.2%{  background-position: -309px 0; }
+    8.4%{  background-position: -618px 0; }
+    12.6%{  background-position: -927px 0; }
+    16.8%{ background-position: -1236px 0;  }
+    21%{ background-position: -1545px 0;  }
+    25.2%{ background-position: -1854px 0;  }
+    29.4%{ background-position: -2163px 0;  }
+    33.6%{  background-position: -2472px 0; }
+    37.8%{  background-position: -2781px 0;  }
+    42%{ background-position: -3090px 0;   }
+    46.2%{  background-position: -3399px 0;  }
+    50.4%{  background-position: -3708px 0;  }
+    54.6%{  background-position: -4017px 0;  }
+    58.8%{  background-position: -4326px 0;  }
+    63%{  background-position: -4635px 0;  }
+    67.2%{  background-position: -4944px 0;  }
+    71.4%{  background-position: -5253px 0;  }
+    75.6%{  background-position: -5562px 0;  }
+    79.8%{  background-position: -5871px 0;  }
+    84%{  background-position: -6180px 0;  }
+    88.2%{  background-position: -6489px 0;  }
+    92.4%{  background-position: -6798px 0;  }
+    96.6%{  background-position: -7107px 0;  }
+    100%{  background-position: 0 0;  }
 }
