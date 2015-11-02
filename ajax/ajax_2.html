@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+	<script>
+	function getXML(){
+		var xhr = null;
+		try{
+			xhr = new XMLHttpRequest();
+		}catch(e){
+			try{
+				xhr = new ActiveXObject('Msxml2.XMLHTTP');
+			}catch(e){
+				try{
+					xhr = new ActiveXObject('Microsoft.XMLHTTP');
+				}catch(failed){
+					xhr = false;
+				}
+			}
+		}
+		return xhr;
+	}
+	var xhr = new getXML();
+	xhr.open('POST','../ajaxfile/ajaxfile1.txt');
+	xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+	xhr.send('name=王二狗&sex=男');
+
+	xhr.onreadystatechange = function(data){
+		if(xhr.readyState === 4 && xhr.status === 200){
+			document.body.innerHTML = xhr.responseText;
+		} else{
+			document.body.innerHTML = '请求失败';
+		}
+	}
+	</script>
+</html>

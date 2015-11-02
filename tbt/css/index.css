@@ -30,13 +30,14 @@ body{background-color: #ccc;}
 .screen_2 .innerCircle img:nth-of-type(2){width: 32px;position: absolute;right: 78px;top: 105px;}
 .screen_2 .circleCity{position: absolute;left: 20px;top: 10px;}
 .screen_2 .circleCity img{width: 238px;}
-.screen_2 .bottomText{position: absolute;bottom: 40px;left: 0;text-align: center;color: #fff;font-size: 16px;width: 100%;line-height: 20px;}
+.bottomText{position: absolute;bottom: 40px;left: 0;text-align: center;color: #fff;font-size: 16px;width: 100%;line-height: 20px;}
 
 .screen_2 .animate .scr_center{-webkit-animation: scale1 1s ease-out 1s backwards;}
 .screen_2 .animate .innerCircle{-webkit-animation: scale1 1.5s ease-out 1s backwards;}
 .screen_2 .animate .earth{-webkit-animation: scale1 2.5s ease-out 1s backwards;}
 .screen_2 .animate .circleCity{-webkit-animation: circleCity .3s ease-out 2.5s backwards;}
-.screen_2 .animate .bottomText{-webkit-animation: opacityText 1.5s 3.5s backwards;}
+.screen_2 .animate .bottomText,.screen_4
+ .animate .bottomText{-webkit-animation: opacityText 1.5s 3.5s backwards;}
 .screen_2 .animate .innerCircle .tz{-webkit-animation: scale1 1s ease-out 1s backwards;}
 
 .screen_3{height: 100%;position: relative;background: linear-gradient(to bottom,rgba(78,170,200,1),rgba(249,141,97,1));}
@@ -49,3 +50,31 @@ body{background-color: #ccc;}
 .screen_3 .tips span{font-size: 16px;margin-top: 33px;display: block;}
 .screen_3 .cloud img{height: 106px;position: absolute;z-index: 1;opacity: .15;left: 45px;top: 100px;}
 .screen_3 .animate .cloud img{-webkit-animation: cloudMove 10s linear infinite;}
+.screen_3 .animate .tips p{-webkit-animation: textFade_s3 4000ms forwards;}
+.screen_3 .animate .tips p:nth-of-type(1){-webkit-animation: textFade_s3 1600ms forwards;}
+.screen_3 .animate .tips p:nth-of-type(2){-webkit-animation: textFade_s3 2000ms forwards;}
+.screen_3 .animate .tips p:nth-of-type(3){-webkit-animation: textFade_s3 2400ms forwards;}
+.screen_3 .animate .tips span{-webkit-animation: textFade_s3 2000ms forwards;}
+
+.screen_4{background: linear-gradient(to bottom, rgba(231,142,81,1) 0%,rgba(249,115,100,1) 100%);height: 100%;overflow: hidden;position: relative;}
+.screen_4 .text_s4{text-align: center;color: #fff;font-size: 16px;line-height: 20px;margin: 32px 0;}
+.screen_4 .s4_wrap{position: relative;}
+.screen_4 .circle_s4{width: 191px;height: 191px;border-radius: 95.5px;background-color: rgba(247,251,208,0.24);position: absolute;position: absolute;left: 50%;top: 50%;margin-left: -95.5px;margin-top: -95.5px;-webkit-transform: scale(1.15);text-align: center;}
+.screen_4 .animate .text_s4 p:nth-of-type(1){-webkit-animation: textFade_s3 1600ms forwards;}
+.screen_4 .animate .text_s4 p:nth-of-type(2){-webkit-animation: textFade_s3 2000ms forwards;}
+.screen_4 .animate .text_s4 p:nth-of-type(3){-webkit-animation: textFade_s3 2400ms forwards;}
+.screen_4 .circle_s4 .rabit_s4 img{width: 134px;margin-top: 32.2px;}
+.screen_4 .animate .circle_s4{-webkit-animation: scale1 800ms ease-out backwards;}
+.screen_4 .animate .rabit_s4 img{-webkit-animation: scale1 1000ms ease-out backwards;}
+.screen_4 .circle_s4 .s4_ico1,.screen_4 .circle_s4 .s4_ico2,.screen_4 .circle_s4 .s4_ico3,.screen_4 .circle_s4 .s4_ico4,.screen_4 .circle_s4 .s4_ico5,.screen_4 .circle_s4 .s4_ico6{background: url(http://img.to8to.com/wap/weixin/p4.png) no-repeat;position: absolute;background-size: 74px;}
+.screen_4 .circle_s4 .s4_ico1{left: -20px;top: 0;width: 74px;height: 42px;background-position: 0 0;}
+.screen_4 .circle_s4 .s4_ico2{right: -20px;top: 0;width: 74px;height: 42px;background-position: 0 -55px;}
+.screen_4 .circle_s4 .s4_ico3{left: -25px;top: 80px;width: 74px;height: 42px;background-position: 0 -157px;}
+.screen_4 .circle_s4 .s4_ico4{right: -49px;top: 80px;width: 74px;height: 42px;background-position: 0 -112px;}
+.screen_4 .circle_s4 .s4_ico5{left: -21px;bottom: -41px;width: 75px;height: 77px;background-position: 0 -203px;}
+.screen_4 .circle_s4 .s4_ico6{right: -20px;bottom: -50px;width: 74px;height: 77px;background-position: 0 -288px;}
+.screen_4 .circle_s4 .s4_ico1{-webkit-animation: scale1 1000ms ease-out 1000ms backwards;}
+.screen_4 .circle_s4 .s4_ico2{-webkit-animation: scale1 1000ms ease-out 1300ms backwards;}
+.screen_4 .circle_s4 .s4_ico3{-webkit-animation: scale1 1000ms ease-out 1600ms backwards;}
+.screen_4 .circle_s4 .s4_ico4{-webkit-animation: scale1 1000ms ease-out 1900ms backwards;}
+.screen_4 .animate .s4_ico5,.screen_4 .animate .s4_ico6{-webkit-animation: scale1 400ms ease-out 400ms backwards;}

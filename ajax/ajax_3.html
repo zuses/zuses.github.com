@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{font-size: 30px;line-height: 50px;}
+	</style>
+</head>
+<body>
+	<h1>员工查询</h1>
+	<label for="keyword">请输入员工编号：</label>
+	<input type="text" id="keyword">
+	<button id="search">查询</button>
+	<p id="searchResult"></p>
+
+	<h1>员工创建</h1>
+	<label for="">请输入员工姓名：</label>
+	<input type="text" id="staffName"><br />
+	<label for="">请输入员工编号：</label>
+	<input type="text" id="staffNumber"><br />
+	<label for="">请输入员工性别：</label>
+	<select id="staffSex">
+		<option value="男">男</option>
+		<option value="女">女</option>
+	</select><br />
+	<label for="">请输入员工职位：</label>
+	<input type="text" id="staffJob"><br />
+	<button id="save">保存</button>
+	<p id="createResult"></p>
+</body>
+	<script>
+	function getXML(){
+		var xhr = null;
+		try{
+			xhr = new XMLHttpRequest();
+		}catch(e){
+			try{
+				xhr = new ActiveXObject('Msxml2.XMLHTTP');
+			}catch(e){
+				try{
+					xhr = new ActiveXObject('Microsoft.XMLHTTP');
+				}catch(failed){
+					xhr = false;
+				}
+			}
+		}
+		return xhr;
+	}
+	var search = document.getElementById('search');
+	var sava = document.getElementById('save');
+
+	search.onclick = function(){
+		var xhr = new getXML();
+		xhr.open('GET','phpfile/staffInfo1.php?number=' + document.getElementById('keyword').value);
+		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		xhr.send();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4){
+				if(xhr.status == 200){
+					document.getElementById('searchResult').innerHTML = xhr.responseText;
+				} else{
+					alert('发生错误：' + xhr.status);
+				}
+			}
+		}
+	}
+
+	save.onclick = function(){
+		var xhr = new getXML();
+		xhr.open('POST','phpfile/staffInfo1.php');
+		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		var data = 'name=' + document.getElementById('staffName').value + '&number=' + document.getElementById('staffNumber').value + '&sex=' + document.getElementById('staffSex').value + '&job=' + document.getElementById('staffJob').value;
+		xhr.send(data);
+		console.log(data);
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4){
+				if(xhr.status == 200){
+					document.getElementById('createResult').innerHTML = xhr.responseText;
+				} else{
+					alert('发生错误：' + xhr.status);
+				}
+			}
+		}
+	}
+	</script>
+</html>
