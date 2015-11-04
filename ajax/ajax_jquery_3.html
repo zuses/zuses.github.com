@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax--跨域问题</title>
+	<style>
+		*{font-size: 30px;line-height: 50px;}
+	</style>
+	<script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<h1>员工查询</h1>
+	<label for="keyword">请输入员工编号：</label>
+	<input type="text" id="keyword">
+	<button id="search">查询</button>
+	<p id="searchResult"></p>
+
+	<h1>员工创建</h1>
+	<label for="">请输入员工姓名：</label>
+	<input type="text" id="staffName"><br />
+	<label for="">请输入员工编号：</label>
+	<input type="text" id="staffNumber"><br />
+	<label for="">请输入员工性别：</label>
+	<select id="staffSex">
+		<option value="男">男</option>
+		<option value="女">女</option>
+	</select><br />
+	<label for="">请输入员工职位：</label>
+	<input type="text" id="staffJob"><br />
+	<button id="save">保存</button>
+	<p id="createResult"></p>
+</body>
+<script>
+	//  跨域的第一种解决方法 -- 服务器代理(后台技术，不做处理)
+	//  跨域的第二种解决方法 -- jsonp(只支持GET请求，不支持POST请求)
+	//  跨域的第三种解决方法 -- XHR2方法，在PHP代码设置header(不支持IE10一下浏览器)
+
+
+
+	$('#search').click(function(){
+		$.ajax({
+			type    : 'GET',
+			url 	: 'http://127.0.0.1/ajax/phpfile/staffInfo2.php?number=' + $('#keyword').val(),
+			//dataType: 'jsonp',  	// 用于jsonp处理跨域问题
+			//jsonp   : 'callback',   // 用于jsonp处理跨域问题
+			success : function(data){
+				if(data.success){
+					$('#searchResult').html(data.msg);
+				} else{
+					$('#searchResult').html('出现错误：' + data.msg);
+				}
+			}
+		})
+	});
+
+	$('#save').click(function(){
+		$.ajax({
+			type    : 'POST',
+			url 	: 'http://127.0.0.1/ajax/phpfile/staffInfo2.php',
+			dataType: 'json',
+			data 	: {
+				name: $('#staffName').val(),
+				number: $('#staffNumber').val(),
+				sex: $('#staffSex').val(),
+				job: $('#staffJob').val()
+			},
+			success : function(data){
+				if(data.success){
+					$('#createResult').html(data.msg);
+				} else{
+					$('#createResult').html('出现错误：' + data.msg);
+				}
+			},
+			error   : function(jqXHR){ // jqXHR参数为xml对象
+				alert('发生错误：' + jqXHR.status);
+			}
+		})
+	});
+</script>
+</html>

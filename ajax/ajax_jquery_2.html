@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用jQuery改写ajax_4.html</title>
+	<style>
+		*{font-size: 30px;line-height: 50px;}
+	</style>
+	<script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<h1>员工查询</h1>
+	<label for="keyword">请输入员工编号：</label>
+	<input type="text" id="keyword">
+	<button id="search">查询</button>
+	<p id="searchResult"></p>
+
+	<h1>员工创建</h1>
+	<label for="">请输入员工姓名：</label>
+	<input type="text" id="staffName"><br />
+	<label for="">请输入员工编号：</label>
+	<input type="text" id="staffNumber"><br />
+	<label for="">请输入员工性别：</label>
+	<select id="staffSex">
+		<option value="男">男</option>
+		<option value="女">女</option>
+	</select><br />
+	<label for="">请输入员工职位：</label>
+	<input type="text" id="staffJob"><br />
+	<button id="save">保存</button>
+	<p id="createResult"></p>
+</body>
+<script>
+	function getXML(){
+		var xhr = null;
+		try{
+			xhr = new XMLHttpRequest();
+		}catch(e){
+			try{
+				xhr = new ActiveXObject('Msxml2.XMLHTTP');
+			}catch(e){
+				try{
+					xhr = new ActiveXObject('Microsoft.XMLHTTP');
+				}catch(failed){
+					xhr = false;
+				}
+			}
+		}
+		return xhr;
+	}
+
+	$('#search').click(function(){
+		$.ajax({
+			type    : 'GET',
+			url 	: 'phpfile/staffInfo2.php?number=' + $('#keyword').val(),
+			dataType: 'json',
+			success : function(data){
+				if(data.success){
+					$('#searchResult').html(data.msg);
+				} else{
+					$('#searchResult').html('出现错误：' + data.msg);
+				}
+			},
+			error   : function(jqXHR){ // jqXHR参数为xml对象
+				alert('发生错误：' + jqXHR.status);
+			}
+		})
+	});
+
+	$('#save').click(function(){
+		$.ajax({
+			type    : 'POST',
+			url 	: 'phpfile/staffInfo2.php',
+			dataType: 'json',
+			data 	: {
+				name: $('#staffName').val(),
+				number: $('#staffNumber').val(),
+				sex: $('#staffSex').val(),
+				job: $('#staffJob').val()
+			},
+			success : function(data){
+				if(data.success){
+					$('#createResult').html(data.msg);
+				} else{
+					$('#createResult').html('出现错误：' + data.msg);
+				}
+			},
+			error   : function(jqXHR){ // jqXHR参数为xml对象
+				alert('发生错误：' + jqXHR.status);
+			}
+		})
+	});
+</script>
+</html>

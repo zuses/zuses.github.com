@@ -83,9 +83,9 @@
 				if(xhr.status == 200){
 					var data = JSON.parse(xhr.responseText);
 					if(data.success){
-						document.getElementById('searchResult').innerHTML = data.mgs;
+						document.getElementById('createResult').innerHTML = data.msg;
 					} else{
-						document.getElementById('searchResult').innerHTML = '出现错误：' + data.msg;
+						document.getElementById('createResult').innerHTML = '出现错误：' + data.msg;
 					}
 				} else{
 					alert('发生错误：' + xhr.status);

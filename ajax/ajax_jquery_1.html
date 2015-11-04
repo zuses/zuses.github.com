@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	
+</body>
+<script>
+	$.ajax({
+		'type'		: 'POST', 		// 传输类型，POST或者GET，默认为GET
+		'url'		: 'xxxx',  		// 发送请求的地址
+		'data'		: 'xxx',		// 是一个对象，连同请求发送到服务器的数据
+		'dataType'  : 'json',		// 预期服务器返回的数据类型，如果不指定，jQuery将根据HTTP包MIME信息来智能判断，一般我们采用json格式，可以设置为'json',
+		'success'   : func, 		// 请求成功后的回调函数。传入返回后的数据，以及包含成功代码的字符串
+		'error' 	: func          // 是一个方法，请求失败时调用此函数。传入XMLHttpRequest对象
+	})
+</script>
+</html>

@@ -2,6 +2,8 @@
 	// 设置页面内容是HTML，编码格式是utf-8
 	//header('Content-Type:text/plain;charset=utf-8');
 	header('Content-Type:application/json;charset=utf-8');
+	header('Access-Control-Allow-Origin:*');   		//  XHR2方法处理跨域问题
+	header('Access-Control-Allow-Method:GET,POST'); //  XHR2方法处理跨域问题
 	// header('Content-Type:text/xml;charset=utf-8');
 	// header('Content-Type:text/html;charset=utf-8');
 	// header('Content-Type:application/javascript;charset=utf-8');
@@ -25,6 +27,8 @@
 
 	// 通过员工编号搜索员工
 	function search(){
+		//$jsonp = $_GET['callback'];  // jsonp跨域方法
+
 		if(!isset($_GET['number']) || empty($_GET['number'])){
 			echo '{"success":false,"msg":"参数错误"}';
 			return;
@@ -46,10 +50,13 @@
 	// 创建员工
 	function create(){
 		// 判断信息是否填写完成
-		if(!isset($_POST['name']) || empty($_POST['name']) || !isset($_POST['number']) || empty($_POST['number']) || !isset($_POST['sex']) || empty($_POST['sex']) || !isset($_POST['job']) || empty($_POST['job'])){
-			echo '参数错误，员工信息填写不全';
-			return;
-		}
-		echo '员工：'.$_POST['name'].'信息保存成功！';
+		if (!isset($_POST["name"]) || empty($_POST["name"])
+		|| !isset($_POST["number"]) || empty($_POST["number"])
+		|| !isset($_POST["sex"]) || empty($_POST["sex"])
+		|| !isset($_POST["job"]) || empty($_POST["job"])) {
+		echo '{"success":false,"msg":"参数错误，员工信息填写不全"}';
+		return;
+	}
+		echo '{"success":true,"msg":"员工：' . $_POST["name"] . ' 信息保存成功！"}';
 	}
  ?>
