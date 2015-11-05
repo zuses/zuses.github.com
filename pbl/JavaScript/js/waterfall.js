@@ -1,5 +1,24 @@
 window.onload = function(){
     waterfall('main','box');
+    var dataInt = {'data':[{'src':'0.jpg'},{'src':'1.jpg'},{'src':'2.jpg'},{'src':'3.jpg'}]}
+    console.log(dataInt.data)
+   window.onscroll = function(){
+        if(checkScrollSlide()){
+            var oParent = document.getElementById('main');
+            for(var i = 0;i < dataInt.data.length;i++){
+                var oBox = document.createElement('div');
+                oBox.className = 'box';
+                oParent.appendChild(oBox);
+                var oPic = document.createElement('div');
+                oPic.className = 'pic';
+                oBox.appendChild(oPic);
+                var oImg = document.createElement('img');
+                oImg.src = 'images/' + dataInt.data[i].src;
+                oPic.appendChild(oImg);
+            }
+            waterfall('main','box');
+        }
+    }
 }
 
 function waterfall(parent,box){
@@ -22,6 +41,7 @@ function waterfall(parent,box){
             oBoxs[i].style.top = minH + 'px';
             oBoxs[i].style.left = index*oBoxW + 'px';
             hArr[index] += oBoxs[i].offsetHeight;
+            console.log(minH)
         }
     }
     console.log(hArr)
@@ -45,3 +65,13 @@ function getMinhIndex(arr,val){
         }
     }
 }
+
+function checkScrollSlide(){
+    var oParent = document.getElementById('main');
+    var oBoxs = getByclass(oParent,'box');   
+    var lastBoxH = oBoxs[oBoxs.length - 1].offsetTop + Math.floor(oBoxs[oBoxs.length - 1].offsetHeight/2);
+    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.body.clientHeight || document.documentElement.clientHeight;
+    return (lastBoxH < scrollTop + height?true:false);
+}
+
