@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.zend.php.phpunit.PHPUnitLaunchConfigurationType">
+<stringAttribute key="ATTR_LOCATION" value="D:\Zend\Zend Studio 12.5.1\plugins\com.zend.php.debug.debugger.php55.win32_12.5.1.v20150514-2003\resources\php55\php.exe"/>
+<stringAttribute key="ATTR_PROJECT_NAME" value="zend_project01"/>
+<stringAttribute key="ZEND_PHPUNIT_TESTS_CONTAINER_TYPE" value="SCRIPT_SOURCE"/>
+<booleanAttribute key="com.zend.php.phpunit.code_coverage" value="true"/>
+<stringAttribute key="com.zend.php.phpunit.container" value="index.php"/>
+<stringAttribute key="com.zend.php.phpunit.elementPath" value="\zend_project01\index.php"/>
+<booleanAttribute key="com.zend.php.phpunit.is_suite" value="true"/>
+<booleanAttribute key="com.zend.php.phpunit.logXml" value="true"/>
+<stringAttribute key="com.zend.php.phpunit.logXmlLocation" value="E:\gitfile\php_muke\index.php-20151106-1732.xml"/>
+<stringAttribute key="com.zend.php.phpunit.phpunitPath" value=""/>
+<stringAttribute key="com.zend.php.phpunit.project" value="zend_project01"/>
+<stringAttribute key="com.zend.php.phpunit.runType" value="PHAR_EXECUTION_TYPE"/>
+<booleanAttribute key="firstLineBreakpoint" value="false"/>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="ZEND_PHPUNIT_PORT" value="7478"/>
+</mapAttribute>
+<booleanAttribute key="org.eclipse.php.debug.core.RunWithDebugInfo" value="false"/>
+<stringAttribute key="org.eclipse.php.debug.coreconfiguration_delegate_class" value="com.zend.php.debug.core.launch.PHPExecutableExtendedLaunchDelegate"/>
+<stringAttribute key="org.eclipse.php.debug.corephp_debugger_id" value="org.eclipse.php.debug.core.zendDebugger"/>
+</launchConfiguration>

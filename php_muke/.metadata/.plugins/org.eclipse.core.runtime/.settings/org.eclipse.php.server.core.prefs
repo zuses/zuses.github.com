@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+phpServers=<server><emptyServer>true</emptyServer><hostname>localhost</hostname><document_root></document_root><name>Default PHP Web Server</name><base_url>http\://&lt;no_php_server&gt;</base_url><id>php-server-bf61c520-93eb-4ec4-9151-1b56f41b5349</id></server>
