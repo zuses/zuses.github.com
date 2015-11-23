@@ -1,8 +1,16 @@
 ;(function($){
 
-	var LightBox = function(){
+	var LightBox = function(settings){
 		var self = this;
 		console.log(self)
+
+		// 配置参数设置
+		this.settings = {
+			speed: 600,
+			maskOpacity: .5
+		}
+		$.extend(this.settings,settings || {});
+
 		// 创建遮罩和弹出框
 		this.popupMask = $('<div id="G-lightbox-mask"></div>');
 		this.popupWin = $('<div id="G-lightbox-popup"></div>');
@@ -38,13 +46,16 @@
 		});
 		// 关闭弹出框
 		this.popupMask.click(function(){
+			self.picCaptionArea.fadeOut();
 			$(this).fadeOut();
 			self.popupWin.fadeOut();
 		});	
 
 		this.closeBtn.click(function(){
+			self.picCaptionArea.fadeOut();
 			self.popupMask.fadeOut();
 			self.popupWin.fadeOut();
+			self.clear = false;
 		});
 
 		// 绑定上下切换按钮事件
@@ -64,6 +75,10 @@
 				self.goto('next');
 			};
 		});
+
+		this.isIE6 = /MSIE 6.0/.gi.test(window.navigator.userAgent);
+		alert(this.isIE6) 
+
 		this.prevBtn.hover(function() {
 			if(!$(this).hasClass('disabled') && self.groupData.length > 1){
 				$(this).addClass('lightbox-prev-btn-show')
@@ -78,6 +93,28 @@
 				e.stopPropagation();
 				self.goto('prev');
 			};
+		});
+
+		// 绑定窗口调整事件
+		var timer = null;
+		this.clear = false;
+		$(window).resize(function(){
+			if(self.clear){
+				window.clearTimeout(timer)
+				timer = window.setTimeout(function(){
+					self.loadPicSize(self.groupData[self.index].src);
+				}, 500)
+			}
+		}).keyup(function(e){
+			var keyValue = e.which;
+			if(self.clear){
+				if(keyValue === 38 || keyValue === 37){
+					self.prevBtn.click();
+				} else if(keyValue === 40 || keyValue === 39){
+					self.nextBtn.click();
+				}
+				console.log(e.which);
+			}
 		});
 	};
 
@@ -125,6 +162,7 @@
 		
 		//把遮罩和弹出框插入到body
 		this.bodyNode.append(this.popupMask,this.popupWin);
+		this.popupMask.css('opacity',this.settings.maskOpacity)
 		},
 
 		getGroup: function(){
@@ -145,6 +183,7 @@
 		loadPicSize: function(sourceSrc){
 			var self = this;
 			self.popupPic.css({width: 'auto',height: 'auto'}).hide();
+			this.picCaptionArea.hide();
 			this.preLoadImg(sourceSrc,function(){
 				self.popupPic.attr('src',sourceSrc);
 				var picWidth = self.popupPic.width();
@@ -182,19 +221,20 @@
 			this.picViewArea.animate({
 				width: width - 10,
 				height: height - 10 
-			})
+			},self.settings.speed)
 			this.popupWin.animate({
 				width: width,
 				height: height,
 				marginLeft: -(width/2),
 				top: (winHeight - height)/2
-			},function(){
+			},self.settings.speed,function(){
 				self.popupPic.css({
 					width: width - 10,
 					height: height - 10
 				}).fadeIn();
 				self.picCaptionArea.fadeIn();
 				self.flag = true;
+				self.clear = true;
 			});
 
 			// 设置描述文字和当前索引
@@ -227,7 +267,7 @@
 				top:-viewHeight
 			}).animate({
 				top: (winHeight-viewHeight)/2
-			},function(){
+			},self.settings.speed,function(){
 				//加载图片
 				self.loadPicSize(sourceSrc);
 			});

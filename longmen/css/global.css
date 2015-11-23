@@ -1,0 +1,28 @@
+@charset "utf-8";
+/**
+ * 
+ * CSS File,created by lishaojie, on 11.11 2015
+ * 
+ * 最后编辑人：lishaojie
+ *
+ */
+ 
+body{-webkit-font-smoothing: antialiased;background-color: #fff;}
+html,body{padding:0; margin:0;}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0;word-wrap: break-word;word-break:break-all;}
+body, button, input, select, textarea { font: 12px/1.5 "Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu; color:#666 }
+h1, h2, h3, h4, h5, h6 { font-size: 100%;font-weight: normal;word-wra}
+address, cite, dfn, em, var, i{ font-style: normal;}
+ul, ol, dl { list-style: none }
+li{vertical-align: top;}
+a { text-decoration: none !important; outline: none ;font-family:"Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;cursor: pointer;color: #666;}
+img {border: 0;vertical-align: top;}
+button, input, select, textarea { font-size: 100% ;font-family:"Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;}
+table{ border-collapse: collapse; border-spacing: 0 }
+
+/*功能性类名*/
+.clear{*zoom:1;}
+.clear:after{display:block;clear:both;content:"\0020";visibility:hidden;height:0;}
+.fl{float: left;}
+.fr{float: right;}
+.ect{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
