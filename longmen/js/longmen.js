@@ -50,6 +50,9 @@ var heroTab = function(settings){
 	});
 	this.fillUl();
 	$(self.settings.sideLi + ':empty').css('cursor','default');
+	$('.page-4 .bs_options .bs_tab li').click(function(){
+		$('.hero_img img').fadeIn();
+	});
 }
 
 heroTab.prototype = {
