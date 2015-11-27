@@ -105,7 +105,7 @@ html,body{height: 100%;}
 .page-4 .page4_right .prev_btn,.page-4 .page4_right .next_btn{width: 48px;height: 48px;position: absolute;top: 50%;margin-top: -24px;cursor: pointer;}
 .page-4 .page4_right .prev_btn{background-position: -252px -179px;left: 0;}
 .page-4 .page4_right .next_btn{background-position: -252px -231px;right: 0}
-.page-4 .page4_right .hero_img{width: 507px;height: 626px;background: url(../img/loading.gif) center no-repeat;}
+.page-4 .page4_right .hero_img{width: 507px;height: 626px;background: url(../img/load.gif) center no-repeat;}
 
 .page-5{width: 100%;height: 100%;background: #928a4d url(../img/page5_bg.jpg) top center no-repeat;background-size: cover;overflow: hidden;position: relative;}
 .page-5 .tv_wrap{margin: 100px auto 0;width: 1032px;}
