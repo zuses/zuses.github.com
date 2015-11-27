@@ -131,6 +131,9 @@ heroTab.prototype = {
 						$('.bs_details').eq(self.settings.curr).find('.' + k).html(self.settings.dataArr[self.currentIndex][k]);
 					}
 				}
+				$('.hero_img img').css('display','none').load(function(){
+					$(this).fadeIn();
+				});
 			}
 		}).end().find('.prev_btn').click(function(){
 			if(!$('.page-4 .bs_wrap').eq(self.settings.curr).find('img').is(':animated')){
