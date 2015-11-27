@@ -6,7 +6,7 @@
 
 		// 配置参数设置
 		this.settings = {
-			speed: 600,
+			speed: 100,
 			maskOpacity: .5
 		}
 		$.extend(this.settings,settings || {});
@@ -40,7 +40,6 @@
 				// 根据当前组名获取同一组数据
 				self.getGroup();
 			}
-
 			// 初始化弹窗
 			self.initPopup($(this));
 		});
@@ -271,7 +270,6 @@
 				//加载图片
 				self.loadPicSize(sourceSrc);
 			});
-
 			// 根据当前点击的元素ID获取在当前组别里面的索引
 			this.index = this.getIndexOf(currentId);
 
