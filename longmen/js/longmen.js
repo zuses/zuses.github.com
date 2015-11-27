@@ -29,6 +29,9 @@ var heroTab = function(settings){
 				$('.bs_details').eq(self.settings.curr).find('.' + k).html(self.settings.dataArr[index][k]);
 			}
 		}
+		$('.hero_img img').css('display','none').load(function(){
+			$(this).fadeIn();
+		});
 	});
 	$(this.settings.sideLi).hover(function() {
 		var _this = $(this);
@@ -84,6 +87,9 @@ heroTab.prototype = {
 				$(self.settings.sideLi).eq(8).click().find('img').animate({
 					'top':0
 				});
+				$('.hero_img img').css('display','none').load(function(){
+					$(this).fadeIn();
+				});
 			});
 			$(self.settings.color).parent().siblings('.prev_btn').click(function(){
 				self.tCount--;
@@ -95,6 +101,9 @@ heroTab.prototype = {
 				})
 				$(self.settings.sideLi).eq(0).click().find('img').animate({
 					'top':0
+				});
+				$('.hero_img img').css('display','none').load(function(){
+					$(this).fadeIn();
 				});
 			});
 		}
@@ -167,6 +176,9 @@ heroTab.prototype = {
 						$('.bs_details').eq(self.settings.curr).find('.' + k).html(self.settings.dataArr[self.currentIndex][k]);
 					}
 				}
+				$('.hero_img img').css('display','none').load(function(){
+					$(this).fadeIn();
+				});
 			}
 		})
 	}
